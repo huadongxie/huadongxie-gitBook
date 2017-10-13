@@ -1,0 +1,1 @@
+## 尝试创建“HomeController”类型的控制器时出错。请确保控制器具有无参数公共构造函数。 {#homecontroller}

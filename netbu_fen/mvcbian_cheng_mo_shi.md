@@ -138,51 +138,7 @@ actionResult.ExecuteResult\(controllerContext\);
 
 ###  {#asp-net-mvc}
 
-### Asp.Net MVC 视图 {#asp-net-mvc-0}
+###  {#asp-net-mvc-0}
 
-**理解视图**
 
-ASP.NET MVC与ASP.NET或者动态服务器页（ASP）不同，它并没有任何直接对应于一个页面的东西。在ASP.NET MVC应用程序中，磁盘上并没有一个页面来对应你在浏览器地址栏中输入的URL路径。在ASP.NET MVC应用程序中，最接近页面的东西是称为视图（View）的东西。
-
-在ASP.NET MVC应用程序中，即将到达的浏览器请求被映射到了控制器动作。一个控制器动作可能会返回一个视图。然而，一个控制器动作可能执行某种类型的操作，例如将你重定向到另一个控制器动作。
-
-代码清单1含有一个简单的控制器，叫做HomeController。HomeController暴露出了两个控制器动作，叫做Index\(\)和Details\(\)。
-
-你可以通过在浏览器的地址栏输入下面的URL，调用第一个动作，Index\(\)动作：
-
-/Home/Index
-
-你可以通过在浏览器中输入这个地址，来调用第二个动作，Details\(\)动作：
-
-/Home/Details
-
-Index\(\)动作返回一个视图。你所创建的大多数动作都将返回一个视图，然而，动作可以返回任何类型的动作结果。例如，Details\(\)动作返回了一个RedirectToActionResult，它可以将即将到达的请求重定向到Index\(\)动作。
-
-Index\(\)动作包含了下面一行代码：
-
-return View\(\);
-
-这行的代码返回了一个视图，该视图在服务器上的路径必须和下面的路径一样：
-
-\Views\Home\Index.aspx
-
-视图的路径由控制器和控制器动作的名称推断得出。
-
-如果你愿意，可以显式地指明视图。下面一行代码返回了一个视图，名为“Fred”：
-
-return View\("Fred"\);
-
-当执行这行代码时，将会从下面的路径返回一个视图：
-
-\Views\Home\Fred.aspx
-
-**创建一个视图**
-
-你可以在解决方案浏览器中的文件夹上点击右键，并且选择菜单项“Add（添加）”、“New Item（新建项）”（如图1）。选择“MVC View Page”模板将标准视图添加到你的项目中。
-
-应该意识到你不能像ASP.NET或者ASP应用程序中那样，随意向项目中添加视图。你必须将视图添加到文件夹中，并且该文件夹的名称与控制器的名称相同（不含Controller后缀）。举个例子，如果你想创建一个新的、叫做Index的视图，该视图可以由名为ProductController的控制器返回，那么你必须添加这个视图到项目的如下文件夹中：
-
-\Views\Product\Index.aspx
-
-含有视图的文件夹的名称必须与返回该视图的控制器的名称相对应。
 

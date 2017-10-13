@@ -44,7 +44,7 @@ namespace Tx.Party.MvcUI.Areas.basedata.Controllers
 
 ### 创建视图 {#-3}
 
-1. 列表[视图](/netbu_fen/mvcbian_cheng_mo_shi/mvc-shi-tu.md)
+1. [列表视图](/netbu_fen/mvcbian_cheng_mo_shi/mvc-shi-tu.md)
 
 创建成功后会生成 一个文件夹和一个文件
 

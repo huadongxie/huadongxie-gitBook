@@ -28,7 +28,7 @@ _.suo:解决方案用户选项,记录所有将与解决方案建立关联的选�
 
 _.asmx:asmx 文件包含 WebService 处理指令，并用作 XML Web services 的可寻址入口点_
 
-_.vsdisco（项目发现）文件 基于 XML 的文件，它包含为 Web 服务提供发现信息的资源的链接 (URL)。_
+_.vsdisco（项目发现）文件 基于 XML 的文件，它包含为 Web 服务提供发现信息的资源的链接 \(URL\)。_
 
 _.htc:一个HTML文件,包含脚本和定义组件的一系列HTC特定元素.htc提供在脚本中implement组件的机制_
 
@@ -36,11 +36,11 @@ _.ascx 是用户控件代码文件_
 
 _.aspx webform html脚本文件_
 
-_.cs 是c#类文件)_
+_.cs 是c\#类文件\)_
 
-_.vb 是vb类文件)_
+_.vb 是vb类文件\)_
 
-_.aspx.cs 和你的webform相关的后台c#代码文件,其实跟.cs是一样的_
+_.aspx.cs 和你的webform相关的后台c\#代码文件,其实跟.cs是一样的_
 
 _.aspx.vb 和你的webform相关的后台VB代码文件,其实跟.vb是一样的_
 
@@ -70,9 +70,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 
 解决方案中包含若干个项目，每个项目有一个Project的说明。
 
-Project(项目在解决方案中的编号=显示名称，实际路径，项目唯一标识)
+Project\(项目在解决方案中的编号=显示名称，实际路径，项目唯一标识\)
 
-_Project(&quot;{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}&quot;) = &quot;Tx.Party.Common&quot;, &quot;Tx.Party.Common\Tx.Party.Common.csproj&quot;, &quot;{3CA77F50-66F8-4284-B78B-178E7E665AB0}&quot;_
+_Project\("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"\) = "Tx.Party.Common", "Tx.Party.Common\Tx.Party.Common.csproj", "{3CA77F50-66F8-4284-B78B-178E7E665AB0}"_
 
 _EndProjectEndProject_
 
@@ -91,3 +91,4 @@ _EndProjectEndProject_
 整个解决方案的配置信息在 SolutionConfigurationPlatforms 中。
 
 每个项目的平台配置信息在 ProjectConfigurationPlatforms 中。
+

@@ -20,6 +20,7 @@
   * [程序结构](netbu_fen/cheng_xu_jie_gou.md)
   * [MVC编程模式](netbu_fen/mvcbian_cheng_mo_shi.md)
     * [MVC 路由](netbu_fen/mvcbian_cheng_mo_shi/mvc-lu-you.md)
+    * [MVC 控制器](netbu_fen/mvcbian_cheng_mo_shi/mvc-kong-zhi-qi.md)
   * [MVC 文件夹](netbu_fen/mvc_wen_jian_jia.md)
   * [App\_Data 文件夹](netbu_fen/appdata_wen_jian_jia.md)
   * [Visaul Studio IDE环境配置](netbu_fen/visaul_studio_idehuan_jing_pei_zhi.md)

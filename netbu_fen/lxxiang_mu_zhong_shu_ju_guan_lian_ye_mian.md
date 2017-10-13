@@ -58,7 +58,7 @@ SecretarySignedOn:null
 
 Status:0
 
-1. Telephone:"139888888888"
+Telephone:"139888888888"
 
 VersionNumber:3
 

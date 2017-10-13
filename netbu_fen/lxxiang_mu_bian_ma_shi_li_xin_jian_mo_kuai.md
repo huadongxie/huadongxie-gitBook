@@ -30,7 +30,7 @@ SocialUnitService.cs 保存到 D:\TXLC\源代码\Tx.Party\Tx.Party.Services\base
 
 ISocialUnitService.cs 保存到 D:\TXLC\源代码\Tx.Party\Tx.Party.Services\basedata
 
-在d:\txlc\源代码\tx.party\tx.party.mvcui\app_start\unityconfig.cs 中注册服务 container.RegisterType&lt;ISocialUnitService, SocialUnitService&gt;();
+在d:\txlc\源代码\tx.party\tx.party.mvcui\app\_start\unityconfig.cs 中注册服务 container.RegisterType&lt;ISocialUnitService, SocialUnitService&gt;\(\);
 
 ### 生成控制器 {#-2}
 
@@ -44,11 +44,11 @@ namespace Tx.Party.MvcUI.Areas.basedata.Controllers
 
 ### 创建视图 {#-3}
 
-1.  列表视图
+1. 列表[视图](/netbu_fen/mvcbian_cheng_mo_shi/mvc-shi-tu.md)
 
 创建成功后会生成 一个文件夹和一个文件
 
-1.  手工修改这个cshtml文件
+1. 手工修改这个cshtml文件
 
 此模块和 Role.cshtml风格接近 从 Role.cshtml中copy 代码来修改。
 
@@ -58,16 +58,19 @@ namespace Tx.Party.MvcUI.Areas.basedata.Controllers
 
 和新增用的是同一个页面、区别在于：
 
-if (top._currentDialog.editType == &#039;add&#039;) {
+if \(top.\_currentDialog.editType == 'add'\) {
 
-$(&#039;input[name=&quot;Opened&quot;]&#039;).prop(&#039;checked&#039;, true);
+$\('input\[name="Opened"\]'\).prop\('checked', true\);
 
 }
 
-if (top._currentDialog.editType == &#039;edit&#039;) {
+if \(top.\_currentDialog.editType == 'edit'\) {
 
-$(&#039;#form1&#039;).form(&#039;load&#039;, &#039;@Url.Content(&quot;~/basedata/SocialUnit/LoadSocialUnit&quot;)&#039;);
+$\('\#form1'\).form\('load', '@Url.Content\("~/basedata/SocialUnit/LoadSocialUnit"\)'\);
 
 };
 
 ### 启用 {#-4}
+
+
+

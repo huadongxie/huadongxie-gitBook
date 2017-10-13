@@ -1,3 +1,4 @@
-## MVC 文件夹 {#mvc}
+##  {#mvc}
 
-Tx.Party.MvcUI下文件夹介绍
+
+

@@ -95,7 +95,7 @@ MVC视图中，Javascripts代码被放于下面的Razor代码中（@section Scri
 
 `@RenderSection("Scripts", required: false)`
 
-##### table控件（对象）
+##### table标签（对象）
 
 ```
 <table id="treeGrid1" class="easyui-treegrid" border="false" style="width: auto; height: 100px"

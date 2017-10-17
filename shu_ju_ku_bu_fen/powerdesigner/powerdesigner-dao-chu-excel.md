@@ -1,6 +1,6 @@
 ### 运行脚本：
 
-在Tools－》Execute Commands里粘贴以下脚本：然后运行
+在Tools－》Execute Commands里粘贴以下脚本：然后运行以下脚本
 
 ![](/assets/import.png)
 

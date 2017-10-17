@@ -11,5 +11,5 @@ Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivisio
 }
 ```
 
-
+指定使用默版文件的位置。
 

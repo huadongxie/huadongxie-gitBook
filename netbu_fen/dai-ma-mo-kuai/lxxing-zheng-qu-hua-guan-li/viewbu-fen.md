@@ -114,17 +114,17 @@ MVC视图中，Javascripts代码被放于下面的Razor代码中（@section Scri
 </table>
 ```
 
- Html table 标签介绍 ： http://www.w3school.com.cn/tags/tag\_table.asp
+Html table 标签介绍 ： [http://www.w3school.com.cn/tags/tag\_table.asp](http://www.w3school.com.cn/tags/tag_table.asp)
 
 id="treeGrid1"   HTML 全局属性  用于规定元素的唯一 id。
 
-|  |
-| :--- |
+## id定义和用法
 
+id 属性规定 HTML 元素的唯一的 id。
 
-  
+id 在 HTML 文档中必须是唯一的。
 
+id 属性可用作链接锚（link anchor），通过 JavaScript（HTML DOM）或通过 CSS 为带有指定 id 的元素改变或添加样式。
 
-  
 
 

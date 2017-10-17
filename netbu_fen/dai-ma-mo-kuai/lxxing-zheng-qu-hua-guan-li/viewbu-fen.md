@@ -95,7 +95,7 @@ MVC视图中，Javascripts代码被放于下面的Razor代码中（@section Scri
 
 `@RenderSection("Scripts", required: false)`
 
-##### table控件
+##### table控件（对象）
 
 ```
 <table id="treeGrid1" class="easyui-treegrid" border="false" style="width: auto; height: 100px"
@@ -151,4 +151,23 @@ border 属性会为每个单元格应用边框，并用边框围绕表格。如�
 style 属性规定元素的行内样式（inline style）
 
 style 属性将覆盖任何全局的样式设定，例如在 &lt;style&gt; 标签或在外部样式表中规定的样式。
+
+## 语法
+
+```
+<
+element 
+style="
+value
+"
+>
+```
+
+### 属性值
+
+| 值 | 描述 |
+| :--- | :--- |
+| style\_definition | 一个或多个由分号分隔的 CSS 属性和值。 |
+
+
 

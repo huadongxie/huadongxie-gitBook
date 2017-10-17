@@ -188,5 +188,19 @@ data-\* 属性包括两部分：
 
 
 
-esayui data-option 属性
+# esayui data-option 属性
+
+data-options是jQuery Easyui 的一个特殊属性。通过这个属性，可以对easyui组件的实例化可以完全写入到html中，例如：
+
+`<div class="easyui-dialog" style="width:400px;height:200px"`
+
+`    data-options="title:'My Dialog',collapsible:true,iconCls:'icon-ok',onOpen:function(){}">`
+
+`    dialog content.`
+
+`</div>`
+
+
+
+
 

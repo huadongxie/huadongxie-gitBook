@@ -13,8 +13,6 @@ Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivisio
 
 指定使用默版文件的位置。
 
-
-
 ```
 @section Scripts{
 
@@ -84,21 +82,16 @@ Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivisio
 }
 ```
 
-@section Scripts{}  
+@section Scripts{  
+}
 
 MVC视图中，Javascripts代码被放于下面的Razor代码中（@section Scripts{}）。
 
 好处：在视图进行JavaScript编程时，是一个很好的实践，在共享视图（\_Layout.cshtml），存在节点（@RenderSection\("scripts", required: false\)），在视图执行时，Razor引擎会将Javascripts代码**抽调**出来，然后在执行的时候，再将这些代码放置在这个地方。
 
+本节的 代码会抽出来放到Tx.Party\Tx.Party.MvcUI\Views\Shared\\_LayoutIndex.cshtml 中的以下代码位置，在最终生成的浏览器页面中，就会很规整。
 
+`@RenderSection("Styles", required: false)`
 
-本节的 代码会抽出来放到Tx.Party\Tx.Party.MvcUI\Views\Shared\\_LayoutIndex.cshtml 中的以下代码位置
-
-`    @RenderSection("Styles", required: false)`
-
-`    @RenderSection("Scripts", required: false)`
-
-
-
-
+`@RenderSection("Scripts", required: false)`
 

@@ -97,6 +97,8 @@ MVC视图中，Javascripts代码被放于下面的Razor代码中（@section Scri
 
 ##### table标签（对象）
 
+在 HTML 文档中 &lt;table&gt; 标签每出现一次，一个 Table 对象就会被创建。
+
 ```
 <table id="treeGrid1" class="easyui-treegrid" border="false" style="width: auto; height: 100px"
        data-options="toolbar:'#toolbar1',fitcolumns:false,fit:true,rownumbers:true, idField:'DivisionNumber', treeField:'DivisionName',onBeforeLoad:treeGrid1_onBeforeLoad, onLoadError: treeGrid1_onLoadError, onSelect:treeGrid1_onSelect"

@@ -14,21 +14,21 @@ ASP.NET路由在两个地方设置
 
 RouteConfig.cs 文件中 实现了 RegisterRoutes\(\)方法
 
-public static void RegisterRoutes\(RouteCollection routes\)
+`public static void RegisterRoutes(RouteCollection routes)`
 
-{
+`{`
 
-routes.IgnoreRoute\("{resource}.axd/{\*pathInfo}"\);
+`routes.IgnoreRoute("{resource}.axd/{*pathInfo}");`
 
-routes.MapRoute\(
+`routes.MapRoute(`
 
-name: "Default",
+`name: "Default",`
 
-url: "{controller}/{action}/{id}",
+`url: "{controller}/{action}/{id}",`
 
-defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+`defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }`
 
-\);
+`);`
 
 默认的路由表包含了一个路由（名叫Default）。Default路由将URL的第一部分映射到控制器名，URL的第二部分映射到控制器动作，第三个部分映射到一个叫做id的参数。
 

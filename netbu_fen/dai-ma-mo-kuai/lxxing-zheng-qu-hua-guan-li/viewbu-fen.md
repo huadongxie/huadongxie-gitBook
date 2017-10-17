@@ -126,5 +126,5 @@ id 在 HTML 文档中必须是唯一的。
 
 id 属性可用作链接锚（link anchor），通过 JavaScript（HTML DOM）或通过 CSS 为带有指定 id 的元素改变或添加样式。
 
-
+http://www.w3school.com.cn/tags/att\_standard\_id.asp
 

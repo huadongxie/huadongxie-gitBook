@@ -1,6 +1,8 @@
 ### 运行脚本：
 
-在Tools－》Execute Commands里粘贴以下脚本：
+在Tools－》Execute Commands里粘贴以下脚本：然后运行
+
+![](/assets/import.png)
 
 `'******************************************************************************`
 
@@ -333,7 +335,7 @@ SheetList.Columns\(1\).ColumnWidth = 20
 
   SheetList.Columns\(3\).ColumnWidth = 30 
 
- SheetList.Columns\(4\).ColumnWidth = 60 
+ SheetList.Columns\(4\).ColumnWidth = 60
 ```
 
 `output "end"`

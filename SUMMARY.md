@@ -26,7 +26,6 @@
     * [MVC 文件夹](netbu_fen/mvcbian_cheng_mo_shi/mvc-wen-jian-jia.md)
   * [Visaul Studio IDE环境配置](netbu_fen/visaul_studio_idehuan_jing_pei_zhi.md)
   * [例子分析](netbu_fen/li_zi_fen_xi.md)
-  * [例子分析2 ](netbu_fen/li_zi_fen_xi_2.md)
   * [lx项目编码实例 -新建模块](netbu_fen/lxxiang_mu_bian_ma_shi_li_xin_jian_mo_kuai.md)
   * [lx项目-修改数据库字段后。](netbu_fen/lxxiang_76ee-_xiu_gai_shu_ju_ku_zi_duan_hou_3002.md)
   * [lx项目编码实例 -同时处理两张表的数据。](netbu_fen/lxxiang_mu_bian_ma_shi_li_tong_shi_chu_li_liang_zh.md)
@@ -37,6 +36,10 @@
   * [代码模块](netbu_fen/dai-ma-mo-kuai.md)
     * [Lx行政区划管理](netbu_fen/dai-ma-mo-kuai/lxxing-zheng-qu-hua-guan-li.md)
       * [View部分](netbu_fen/dai-ma-mo-kuai/lxxing-zheng-qu-hua-guan-li/viewbu-fen.md)
+    * lx用户登陆
+    * [公共部分](netbu_fen/dai-ma-mo-kuai/gong-gong-bu-fen.md)
+      * [View模板引用](netbu_fen/dai-ma-mo-kuai/gong-gong-bu-fen/viewmo-ban-yin-yong.md)
+  * [例子分析2 ](netbu_fen/li_zi_fen_xi_2.md)
 * [.微信部分](wei_xin_bu_fen/README.md)
   * [自定义微信菜单](wei_xin_bu_fen/zi_ding_yi_wei_xin_cai_dan.md)
 * [IIS配置](iispei_zhi/README.md)

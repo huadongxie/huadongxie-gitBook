@@ -4,3 +4,12 @@ Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivisio
 
 Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivisionEdit.cshtml
 
+```
+@{
+    ViewBag.Title = "行政区划";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+```
+
+
+

@@ -15,6 +15,7 @@
 * [数据库部分](shu_ju_ku_bu_fen/README.md)
   * [数据库mysql](shu_ju_ku_bu_fen/shu_ju_ku_mysql.md)
   * [powerDesigner](shu_ju_ku_bu_fen/powerdesigner.md)
+    * [PowerDesigner 导出EXCEL](shu_ju_ku_bu_fen/powerdesigner/powerdesigner-dao-chu-excel.md)
   * [数据库sql Server ](shu_ju_ku_bu_fen/shu_ju_ku_sql_server.md)
 * [.net部分](netbu_fen/README.md)
   * [程序结构](netbu_fen/cheng_xu_jie_gou.md)

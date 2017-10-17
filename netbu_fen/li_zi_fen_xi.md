@@ -4,17 +4,17 @@ SystemUser
 
 View端：Tx.Party.MvcUI\Areas\Admin\Views\SystemUser\SystemUser.cshtml
 
-@{
+`@{`
 
-Layout = "~/Views/Shared/\_LayoutIndex.cshtml";
+`Layout = "~/Views/Shared/_LayoutIndex.cshtml";`
 
-ViewBag.Title = "公共码表";
+`ViewBag.Title = "公共码表";`
 
-}
+`}`
 
 ViewBag ：**使用ViewBag\(视图包\)传递数据**
 
-**View  Bag 允许在一个动态的对象上定义任意属性,并在视图中访问它.这个动态的对象可以通过Controller.ViewBag属性访问它.**
+**ViewBag 允许在一个动态的对象上定义任意属性,并在视图中访问它.这个动态的对象可以通过Controller.ViewBag属性访问它.**
 
 ViewBag.Title 就是 显示网页的title  ，可以在layout里面 定义一个 @ViewBag.Title - XXX网站
 

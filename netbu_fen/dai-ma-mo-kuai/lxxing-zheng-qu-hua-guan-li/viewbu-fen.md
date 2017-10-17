@@ -200,5 +200,40 @@ data-options是jQuery Easyui 的一个特殊属性。通过这个属性，可以
 
 属性，事件，都可以直接写在data-options里面，这样就方便多了。
 
+**  easyui 里面的组件属性，同样可以写在标签里面**。  
+
+
+```
+<pre name="code" class="html"> <div class="easyui-accordion" style="width: 220px; height: 356px; margin-left: 150px;       margin-top: 0px; float: left">
+        <div title="配置管理" data-options="iconCls:'icon-ok'" style="overflow: auto;        padding: 10px;">
+            <ul class="easyui-tree">
+                <li>
+                    <span>流程配置</span>
+                </li>
+
+                <li>
+                    <span>公约配置</span>
+                </li>
+
+
+                <li>
+                    <span>学生信息分类配置</span>
+                </li>
+
+                <li>
+                    <span>说明配置</span>
+                </li>
+
+            </ul>
+        </div>
+```
+
+  
+
+
+
+
+
+
 
 

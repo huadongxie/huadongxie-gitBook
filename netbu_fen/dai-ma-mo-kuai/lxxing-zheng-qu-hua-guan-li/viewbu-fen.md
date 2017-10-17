@@ -134,5 +134,7 @@ class 属性规定元素的类名（classname）。
 
 class 属性大多数时候用于指向样式表中的类（class）。不过，也可以利用它通过 JavaScript 来改变带有指定 class 的 HTML 元素。
 
-http://www.w3school.com.cn/tags/att\_standard\_class.asp
+[http://www.w3school.com.cn/tags/att\_standard\_class.asp](http://www.w3school.com.cn/tags/att_standard_class.asp)
+
+
 

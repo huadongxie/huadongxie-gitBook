@@ -1,6 +1,6 @@
 代码位置：
 
-Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\_AdministrativeDivision.cshtml_
+Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivision.cshtml\_
 
-Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\_AdministrativeDivisionEdit.cshtml_
+Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivisionEdit.cshtml
 

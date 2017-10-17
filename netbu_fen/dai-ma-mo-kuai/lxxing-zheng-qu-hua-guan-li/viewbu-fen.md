@@ -95,5 +95,36 @@ MVC视图中，Javascripts代码被放于下面的Razor代码中（@section Scri
 
 `@RenderSection("Scripts", required: false)`
 
+##### table控件
+
+```
+<table id="treeGrid1" class="easyui-treegrid" border="false" style="width: auto; height: 100px"
+       data-options="toolbar:'#toolbar1',fitcolumns:false,fit:true,rownumbers:true, idField:'DivisionNumber', treeField:'DivisionName',onBeforeLoad:treeGrid1_onBeforeLoad, onLoadError: treeGrid1_onLoadError, onSelect:treeGrid1_onSelect"
+       singleselect="true" >
+    <thead>
+        <tr>
+            <th field="DivisionName" halign="center" align="left" width="300px">区划名称</th>
+            <th field="DivisionNumber" halign="center" align="left" width="100px">区划代码</th>
+            <th field="DivisionCategoryText" halign="center" align="left" width="100px">类型</th>
+            <th field="ParentNumber" hidden="hidden"></th>
+            <th field="Opened" halign="center" align="center" width="50px" formatter="formatBool">启用</th>
+            <th field="Description" halign="center" align="left" width="200px">备注</th>
+        </tr>
+    </thead>
+</table>
+```
+
+ Html table 标签介绍 ： http://www.w3school.com.cn/tags/tag\_table.asp
+
+id="treeGrid1"   HTML 全局属性  用于规定元素的唯一 id。
+
+|  |
+| :--- |
+
+
+  
+
+
+  
 
 

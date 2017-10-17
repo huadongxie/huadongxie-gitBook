@@ -136,3 +136,15 @@ class 属性大多数时候用于指向样式表中的类（class）。不过，
 
 [http://www.w3school.com.cn/tags/att\_standard\_class.asp](http://www.w3school.com.cn/tags/att_standard_class.asp)
 
+
+
+## border\(table属性\)定义和用法
+
+border 属性规定规定围绕表格的边框的宽度。
+
+border 属性会为每个单元格应用边框，并用边框围绕表格。如果 border 属性的值发生改变，那么只有表格周围边框的尺寸会发生变化。表格内部的边框则是 1 像素宽。
+
+提示：设置 border="0"，可以显示没有边框的表格。
+
+从实用角度出发，最好不要规定边框，而是使用 CSS 来添加[边框样式和颜色](http://www.w3school.com.cn/css/css_border.asp)。
+

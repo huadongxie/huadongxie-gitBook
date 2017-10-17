@@ -126,5 +126,11 @@ id 在 HTML 文档中必须是唯一的。
 
 id 属性可用作链接锚（link anchor），通过 JavaScript（HTML DOM）或通过 CSS 为带有指定 id 的元素改变或添加样式。
 
-http://www.w3school.com.cn/tags/att\_standard\_id.asp
+[http://www.w3school.com.cn/tags/att\_standard\_id.asp](http://www.w3school.com.cn/tags/att_standard_id.asp)
+
+## class定义和用法
+
+class 属性规定元素的类名（classname）。
+
+class 属性大多数时候用于指向样式表中的类（class）。不过，也可以利用它通过 JavaScript 来改变带有指定 class 的 HTML 元素。
 

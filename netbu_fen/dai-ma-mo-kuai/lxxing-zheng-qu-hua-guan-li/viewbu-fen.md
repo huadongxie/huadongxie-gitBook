@@ -208,54 +208,7 @@ data-\* 属性包括两部分：
 
 # [esayui tree-grid](/netbu_fen/dai-ma-mo-kuai/lxxing-zheng-qu-hua-guan-li/viewbu-fen/treegrideasyui.md)
 
-# esayui data-option 属性
-
-data-options是jQuery Easyui 的一个特殊属性。通过这个属性，可以对easyui组件的实例化可以完全写入到html中，例如：
-
-`<div class="easyui-dialog" style="width:400px;height:200px"`
-
-`data-options="title:'My Dialog',collapsible:true,iconCls:'icon-ok',onOpen:function(){}">`
-
-`dialog content.`
-
-`</div>`
-
-属性，事件，都可以直接写在data-options里面，这样就方便多了。
-
-**  easyui 里面的组件属性，同样可以写在标签里面**。
-
-```
-<pre name="code" class="html"> <div class="easyui-accordion" style="width: 220px; height: 356px; margin-left: 150px;       margin-top: 0px; float: left">
-        <div title="配置管理" data-options="iconCls:'icon-ok'" style="overflow: auto;        padding: 10px;">
-            <ul class="easyui-tree">
-                <li>
-                    <span>流程配置</span>
-                </li>
-
-                <li>
-                    <span>公约配置</span>
-                </li>
-
-
-                <li>
-                    <span>学生信息分类配置</span>
-                </li>
-
-                <li>
-                    <span>说明配置</span>
-                </li>
-
-            </ul>
-        </div>
-```
-
-总结：**data-option就是一个可以在标签等容器中显示图标的方法。如：**
-
-![](http://img.blog.csdn.net/20141227215737187?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDM3NTY2Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
-
-treegrid\(树形表格\)
-
-### 
+# 
 
 
 

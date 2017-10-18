@@ -338,7 +338,11 @@ string
 
 定义树节点字段。**（必须的）**
 
+#### onBeforeLoad\(来自TreeGrid\)
 
+row、param
+
+在请求数据加载之前触发，返回false可以取消加载动作。
 
 
 

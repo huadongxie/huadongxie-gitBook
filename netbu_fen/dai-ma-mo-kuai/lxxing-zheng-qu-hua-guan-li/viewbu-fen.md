@@ -257,10 +257,21 @@ treegrid\(树形表格\)
 
 树形表格用于显示分层数据表格。它是基于数据表格、组合树控件和可编辑表格。树形表格允许用户创建可定制的、异步展开行和显示在多列上的分层数据。
 
+toolbar\(来自DataGrid\) 
+
+array,selector
+
+顶部工具栏的DataGrid面板。可能的值：  
+1\) 一个数组，每个工具属性都和linkbutton一样。  
+2\) 选择器指定的工具栏。在&lt;div&gt;标签上定义工具栏：$\('\#dg'\).datagrid\({	toolbar: '\#tb'}\);&lt;div id="tb"&gt;&lt;a href="\#" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true"/a&gt;&lt;a href="\#" class="easyui-linkbutton" data-options="iconCls:'icon-help',plain:true"/a&gt;&lt;/div&gt;通过数组定义工具栏：$\('\#dg'\).datagrid\({	toolbar: \[{		iconCls: 'icon-edit',		handler: function\(\){alert\('编辑按钮'\)}	},'-',{		iconCls: 'icon-help',		handler: function\(\){alert\('帮助按钮'\)}	}\]}\);
+
+
+
 | 属性名 | 属性值类型 | 描述 | 默认值 |
 | :--- | :--- | :--- | :--- |
 | idField | string | 定义关键字段来标识树节点（必须） | null |
 | treeField | string | 定义树节点字段（必须） | null |
+| toolbar\(来自DataGrid\) | array,selector |  |  |
 
 |  |
 | :--- |

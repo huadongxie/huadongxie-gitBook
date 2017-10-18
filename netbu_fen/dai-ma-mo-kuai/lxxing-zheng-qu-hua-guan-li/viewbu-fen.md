@@ -95,6 +95,28 @@ MVC视图中，Javascripts代码被放于下面的Razor代码中（@section Scri
 
 `@RenderSection("Scripts", required: false)`
 
+布局 Tx.Party\Tx.Party.MvcUI\Areas\basedata\Views\PartyMember\DivisionPartyMember.cshtml
+
+```
+<div class="easyui-layout" data-options="fit:true">
+
+    <div data-options="region:'west',split:true,title:'行政区划',collapsible:false" style="width: 350px;">
+
+        @Html.Partial("_DivisionTreePartial")
+
+    </div>
+
+    <div data-options="region:'center', title:'党员列表'">
+
+        @Html.Partial("_PartyMember")
+
+    </div>
+
+</div>
+```
+
+
+
 ##### table标签（对象）
 
 在 HTML 文档中 &lt;table&gt; 标签每出现一次，一个 Table 对象就会被创建。
@@ -227,10 +249,37 @@ data-options是jQuery Easyui 的一个特殊属性。通过这个属性，可以
         </div>
 ```
 
-总结：data-option就是一个可以在标签等容器中显示图标的方法。如：
+总结：**data-option就是一个可以在标签等容器中显示图标的方法。如：**
 
-![](http://img.blog.csdn.net/20141227215737187?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDM3NTY2Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)  
+![](http://img.blog.csdn.net/20141227215737187?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDM3NTY2Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+
+treegrid\(树形表格\)
+
+### TreeGrid\(树形表格\)
+
+树形表格用于显示分层数据表格。它是基于数据表格、组合树控件和可编辑表格。树形表格允许用户创建可定制的、异步展开行和显示在多列上的分层数据。
 
 
-注：以上为本人初次接触“data-options”所得，理解可能有偏差，希望前辈多多指教！
+
+| 属性名 | 属性值类型 | 描述 | 默认值 |
+| :--- | :--- | :--- | :--- |
+| idField | string |  |  |
+
+
+
+|  |  |
+| :--- | :--- |
+|  |  |
+
+
+
+
+
+
+
+
+
+
+
+
 

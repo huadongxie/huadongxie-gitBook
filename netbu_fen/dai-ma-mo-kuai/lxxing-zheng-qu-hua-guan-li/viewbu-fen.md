@@ -344,5 +344,19 @@ row、param
 
 在请求数据加载之前触发，返回false可以取消加载动作。
 
+#### onLoadError\(来自TreeGrid\)
+
+数据加载失败的时候触发，参数和jQuery的$.ajax\(\)函数的'error'回调函数一样。
+
+#### onSelect（来自TreeGrid）
+
+在用户选择的时候触发，返回false则取消该动作。**（该事件自1.4版开始可用）**
+
+#### singleselect\(来自datagrid\)
+
+boolean
+
+如果为true，则只允许选择一行。
+
 
 

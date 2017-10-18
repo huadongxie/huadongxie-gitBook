@@ -274,7 +274,7 @@ number
 
 #### 1.属性中指定
 
-datagrid1 中 
+datagrid1 中
 
 ```
 <table id="treeGrid1" class="easyui-treegrid" border="false" style="width: auto; height: 100px"
@@ -311,5 +311,32 @@ onBeforeLoad:treeGrid1\_onBeforeLoad
         }
 ```
 
-通过$\('\#treeGrid1'\)得到树表格对象，通过treeGrid\('option'\) 访问并设定url的值。 
+通过$\('\#treeGrid1'\)得到树表格对象，通过treeGrid\('option'\) 访问并设定url的值。
+
+点事件处理
+
+在onSelect 中调用js方法treeGrid1\_onSelect
+
+```
+        function treeGrid1_onSelect(row) {
+            if (row) {
+                var level = $('#treeGrid1').treegrid("getLevel", row.DivisionNumber);
+                level > 1 ? $('#btnAdd').linkbutton('disable') : $('#btnAdd').linkbutton('enable');
+            } else {
+                $('#btnAdd').linkbutton('disable');
+            }           
+        }
+```
+
+row 是easyui中onSelect 的参数，
+
+#### &lt;getLevel 方法&gt;\(来自easyui-treegrid\)
+
+参数id
+
+获取指定节点等级。
+
+
+
+
 

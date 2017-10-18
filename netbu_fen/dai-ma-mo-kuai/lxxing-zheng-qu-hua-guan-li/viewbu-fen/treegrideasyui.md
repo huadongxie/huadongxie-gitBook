@@ -161,6 +161,8 @@ row、param
 
 #### onSelect（来自TreeGrid）
 
+row
+
 在用户选择的时候触发，返回false则取消该动作。**（该事件自1.4版开始可用）**
 
 #### singleselect\(来自datagrid\)

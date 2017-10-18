@@ -270,3 +270,46 @@ number
 
 列的宽度。如果没有定义，宽度将自动扩充以适应其内容。
 
+## 数据传递
+
+#### 1.属性中指定
+
+datagrid1 中 
+
+```
+<table id="treeGrid1" class="easyui-treegrid" border="false" style="width: auto; height: 100px"
+       data-options=" url:'@Url.Content("~/basedata/AdministrativeDivision/ListSubDivision")', toolbar:'#toolbar1',fitcolumns:false,fit:true,rownumbers:true, idField:'DivisionNumber', treeField:'DivisionName', onLoadError: treeGrid1_onLoadError, onSelect:treeGrid1_onSelect"
+       singleselect="true" >
+```
+
+url:'@Url.Content\("~/basedata/AdministrativeDivision/ListSubDivision"\)'
+
+url 指定数据来源  listSubDivision方法 返回数据为 \[{"DivisionName":"四川省","DivisionNumber":510000000000,"DivisionCategoryText":null,"Opened":true,"state":"closed","Description":null}\]。
+
+&lt;th&gt;中的 field 属性 按 字段名 取出数据
+
+![](/assets/Division.png)
+
+#### 2.使用js代码处理
+
+onBeforeLoad:treeGrid1\_onBeforeLoad
+
+```
+<table id="treeGrid1" class="easyui-treegrid" border="false" style="width: auto; height: 100px"
+       data-options="toolbar:'#toolbar1',fitcolumns:false,fit:true,rownumbers:true, idField:'DivisionNumber', treeField:'DivisionName',onBeforeLoad:treeGrid1_onBeforeLoad, onLoadError: treeGrid1_onLoadError, onSelect:treeGrid1_onSelect"
+       singleselect="true" >
+```
+
+在onBeforeLoad事件中调用js方法。
+
+```
+        //加载前事件
+        function treeGrid1_onBeforeLoad(row, param) {
+            if ($('#treeGrid1').treegrid('options').url == undefined) {
+                $('#treeGrid1').treegrid('options').url = '@Url.Content("~/basedata/AdministrativeDivision/ListSubDivision")';
+            }
+        }
+```
+
+通过$\('\#treeGrid1'\)得到树表格对象，通过treeGrid\('option'\) 访问并设定url的值。 
+

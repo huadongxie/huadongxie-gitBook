@@ -260,5 +260,11 @@ string
 
 指明如何对齐列数据。可以使用的值有：'left','right','center'。
 
+#### &lt;width&gt;\(来自easyui-dataGrid\)
+
+number
+
+列的宽度。如果没有定义，宽度将自动扩充以适应其内容。
+
 
 

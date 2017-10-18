@@ -311,13 +311,11 @@ panel\(面板\)
 
 ```
 <div style="width:200px;height:100px;padding:5px">
-	<div class="easyui-panel" style="width:200px;height:100px"
-			data-options="fit:true,border:false">
-		Embedded Panel
-	</div>
+    <div class="easyui-panel" style="width:200px;height:100px"
+            data-options="fit:true,border:false">
+        Embedded Panel
+    </div>
 </div>
-
-
 ```
 
 #### rownumbers\(来自DataGrid\)
@@ -325,6 +323,20 @@ panel\(面板\)
 boolean
 
 如果为true，则显示一个行号列。
+
+treegrid\(树形表格\)
+
+#### idField\(来自TreeGrid\)
+
+string
+
+定义关键字段来标识树节点。**（必须的）**
+
+#### treeField\(来自TreeGrid\)
+
+string
+
+定义树节点字段。**（必须的）**
 
 
 

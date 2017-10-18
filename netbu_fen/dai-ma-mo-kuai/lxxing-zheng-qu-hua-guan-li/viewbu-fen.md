@@ -269,14 +269,12 @@ array,selector
 
 ```
 $('#dg').datagrid({
-	toolbar: '#tb'
+    toolbar: '#tb'
 });
 <div id="tb">
 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true"/a>
 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-help',plain:true"/a>
 </div>
-
-
 ```
 
 datagrid\(数据表格\)
@@ -285,17 +283,50 @@ datagrid\(数据表格\)
 
 ```
 $('#dg').datagrid({
-	toolbar: [{
-		iconCls: 'icon-edit',
-		handler: function(){alert('编辑按钮')}
-	},'-',{
-		iconCls: 'icon-help',
-		handler: function(){alert('帮助按钮')}
-	}]
+    toolbar: [{
+        iconCls: 'icon-edit',
+        handler: function(){alert('编辑按钮')}
+    },'-',{
+        iconCls: 'icon-help',
+        handler: function(){alert('帮助按钮')}
+    }]
 });
+```
+
+#### fitcolumns\(来自DataGrid\)
+
+boolean
+
+datagrid\(数据表格\)
+
+真正的自动展开/收缩列的大小，以适应网格的宽度，防止水平滚动。
+
+#### fit\(来自DataGrid-&gt;Panel\)
+
+boolean
+
+panel\(面板\)
+
+当设置为true的时候面板大小将自适应父容器。下面的例子显示了一个面板，可以自动在父容器的最大范围内调整大小。
+
+```
+<div style="width:200px;height:100px;padding:5px">
+	<div class="easyui-panel" style="width:200px;height:100px"
+			data-options="fit:true,border:false">
+		Embedded Panel
+	</div>
+</div>
 
 
 ```
+
+#### rownumbers\(来自DataGrid\)
+
+boolean
+
+如果为true，则显示一个行号列。
+
+
 
 
 

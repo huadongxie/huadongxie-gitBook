@@ -313,7 +313,86 @@ onBeforeLoad:treeGrid1\_onBeforeLoad
 
 通过$\('\#treeGrid1'\)得到树表格对象，通过treeGrid\('option'\) 访问并设定url的值。
 
-点事件处理
+url 调用的是 ListSubDivision\(Int64?id\) 方法
+
+第一次调用时传入参数id = null
+
+tableName=\[basedata\].\[f\_GetAdministrativeDivision\]\(510000000000\)
+
+"SELECT  \*  FROM \[basedata\].\[f\_GetAdministrativeDivision\]\(510000000000\) "
+
+```
+SELECT  *  FROM [basedata].[f_GetAdministrativeDivision](510000000000) 
+```
+
+这条sql语句 是调用 SQLSERVER的 表值函数 f\_GetAdministrativeDivision
+
+```
+USE [tx_NewParty]
+GO
+/****** Object:  UserDefinedFunction [basedata].[f_GetAdministrativeDivision]    Script Date: 2017/10/18 14:23:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- 开发人员: 
+-- 开发日期：2017-09
+-- 功    能: 获取指定行政区划
+
+-- <参数定义>
+-- <param name="DivisionNumber"行政区划代码</param>
+-- </参数定义>
+
+-- 测    试: SELECT * FROM [basedata].[f_GetAdministrativeDivision] (510000000000)
+-- =============================================
+ALTER FUNCTION [basedata].[f_GetAdministrativeDivision] 
+(  
+    @DivisionNumber bigint = NULL
+)
+RETURNS @result TABLE
+	(DivisionNumber bigint NOT NULL,
+	 DivisionName nvarchar(50) NOT NULL,
+	 ParentNumber bigint NULL,
+	 DivisionCategoryText nvarchar(50) NULL,
+	 Opened bit NOT NULL,
+	 ChildrenCount int,
+	 Description nvarchar(200) NULL)
+AS
+BEGIN
+ 	INSERT INTO @result(DivisionNumber, DivisionName, ParentNumber, DivisionCategoryText, Opened, Description)
+		 SELECT DivisionNumber, DivisionName, ParentNumber, DivisionCategoryText, Opened, Description
+           FROM basedata.V_AdministrativeDivision
+          WHERE DivisionNumber = @DivisionNumber;
+
+    UPDATE @result
+	   SET ChildrenCount = t1._count
+      FROM @result r INNER JOIN (SELECT r1.DivisionNumber, _count = COUNT(1)
+	                               FROM @result r1 INNER JOIN basedata.AdministrativeDivision ad 
+								        ON (r1.DivisionNumber = ad.ParentNumber)
+                               GROUP BY r1.DivisionNumber) t1
+		   ON (r.DivisionNumber = t1.DivisionNumber);
+       
+	RETURN 
+END
+```
+
+在点击树根节点是
+
+传入参数
+
+ID=510000000000
+
+调用另一个 函数f\_GetSubAdministrativeDivision
+
+result 反回的根节点下的其他数据
+
+```
+[{"DivisionName":"天府园区","DivisionNumber":510000000001,"DivisionCategoryText":"工业园区","Opened":true,"state":"open","Description":null},{"DivisionName":"华阳","DivisionNumber":510000000033,"DivisionCategoryText":"工业园区","Opened":true,"state":"open","Description":"这是一个测试"},{"DivisionName":"天府新区高新南区","DivisionNumber":510000000044,"DivisionCategoryText":"工业园区","Opened":true,"state":"open","Description":"这是一个测试"},{"DivisionName":"四川直属园区1","DivisionNumber":510000000051,"DivisionCategoryText":"工业园区","Opened":false,"state":"open","Description":null},{"DivisionName":"ParentNumber","DivisionNumber":510000000099,"DivisionCategoryText":"工业园区","Opened":false,"state":"open","Description":null},{"DivisionName":"天府新区","DivisionNumber":510000000111,"DivisionCategoryText":"工业园区","Opened":true,"state":"open","Description":"这是一个测试"},{"DivisionName":"test 测试","DivisionNumber":510000000321,"DivisionCategoryText":"工业园区","Opened":false,"state":"open","Description":null},{"DivisionName":"青羊区天府广场","DivisionNumber":510000000331,"DivisionCategoryText":"工业园区","Opened":false,"state":"open","Description":"123"},{"DivisionName":"TEST 这事一个测试","DivisionNumber":510000000456,"DivisionCategoryText":"工业园区","Opened":false,"state":"open","Description":null},{"DivisionName":"test 下拉框","DivisionNumber":510000000666,"DivisionCategoryText":"工业园区","Opened":false,"state":"open","Description":null},{"DivisionName":"ABC","DivisionNumber":510000000789,"DivisionCategoryText":"工业园区","Opened":true,"state":"open","Description":null},{"DivisionName":"fuchen","DivisionNumber":510000000999,"DivisionCategoryText":"工业园区","Opened":true,"state":"open","Description":"cehsi"},{"DivisionName":"成都市","DivisionNumber":510101000000,"DivisionCategoryText":null,"Opened":true,"state":"closed","Description":null},{"DivisionName":"广元市","DivisionNumber":510801000000,"DivisionCategoryText":null,"Opened":true,"state":"closed","Description":null},{"DivisionName":"new_test","DivisionNumber":511000000001,"DivisionCategoryText":"工业园区","Opened":false,"state":"open","Description":"12"},{"DivisionName":"第二综合党委","DivisionNumber":515000000000,"DivisionCategoryText":null,"Opened":true,"state":"open","Description":null}]
+```
+
+#### 点击事件处理
 
 在onSelect 中调用js方法treeGrid1\_onSelect
 
@@ -335,8 +414,4 @@ row 是easyui中onSelect 的参数，
 参数id
 
 获取指定节点等级。
-
-
-
-
 

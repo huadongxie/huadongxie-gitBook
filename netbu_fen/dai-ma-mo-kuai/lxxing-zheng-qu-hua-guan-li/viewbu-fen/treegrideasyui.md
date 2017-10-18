@@ -23,7 +23,7 @@ Tx.Party.MvcUI\Areas\basedata\Views\AdministrativeDivision\AdministrativeDivisio
 
 树形表格用于显示分层数据表格。它是基于数据表格、组合树控件和可编辑表格。树形表格允许用户创建可定制的、异步展开行和显示在多列上的分层数据。
 
-####  data-option 属性
+#### data-option 属性
 
 data-options是jQuery Easyui 的一个特殊属性。通过这个属性，可以对easyui组件的实例化可以完全写入到html中，例如：
 
@@ -67,10 +67,6 @@ data-options是jQuery Easyui 的一个特殊属性。通过这个属性，可以
 总结：**data-option就是一个可以在标签等容器中显示图标的方法。如：**
 
 ![](http://img.blog.csdn.net/20141227215737187?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDM3NTY2Mw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
-
-
-
-### 
 
 #### toolbar\(来自DataGrid\)
 

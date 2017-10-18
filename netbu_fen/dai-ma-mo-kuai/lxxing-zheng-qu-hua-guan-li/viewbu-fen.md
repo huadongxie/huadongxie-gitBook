@@ -237,7 +237,9 @@ HTML 表单中有两种类型的单元格：
 
 th 元素内部的文本通常会呈现为居中的粗体文本，而 td 元素内的文本通常是左对齐的普通文本。
 
+#### &lt;tr&gt;&lt;定义和用法
 
+&lt;tr&gt; 标签定义 HTML 表格中的行。
 
-
+tr 元素包含一个或多个[th](http://www.w3school.com.cn/tags/tag_th.asp)或[td](http://www.w3school.com.cn/tags/tag_td.asp)元素。
 

@@ -33,3 +33,30 @@ ActionResult 是命名空间 namespace System.Web.Mvc 中定义的 类。
 
 System.Web.Mvc命名空间包含一些类和接口，它们支持用于创建 Web 应用程序的 ASP.NET 模型视图控制器 \(MVC\) 框架。该命名空间包含表示控制器、控制器工厂、操作结果、视图、分部视图以及模型联编程序等的类。
 
+
+
+# Controller 类
+
+提供用于响应对 ASP.NET MVC 网站所进行的 HTTP 请求的方法。
+
+
+
+this.Ajax\(result\)  Ajax方法是  项目DLL（Tx.Web.MVC）中封装的一个方法
+
+```
+public static class AjaxController
+{
+    // Methods
+    public static AjaxResult Ajax(this Controller controller);
+    public static AjaxResult Ajax(this Controller controller, object data);
+    public static AjaxResult Ajax(this Controller controller, int total, object data);
+    public static AjaxResult Ajax(this Controller controller, int total, object data, object footer);
+    public static AjaxErrorResult AjaxError(this Controller controller, ControllerContext context, string message = "对不起，处理你的请求时发生错误!");
+    public static AjaxErrorResult AjaxError(this Controller controller, ControllerContext context, int clientCode, string message = "对不起，处理你的请求时发生错误!");
+    public static AjaxExceptionResult AjaxException(this Controller controller, ControllerContext context, Exception ex);
+    public static AjaxResult AjaxValidate(this Controller controller, ControllerContext context);
+}
+```
+
+
+

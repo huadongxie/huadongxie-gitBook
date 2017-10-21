@@ -44,5 +44,59 @@ CommandText = "SELECT  \*  FROM \[basedata\].\[f\_GetRecursiveDivision\]\(510000
 
 然后继续执行，如果id.HasValue有值（510801000000 广元的数据掩码），就调用f\_GetSubAdministrativeDivision（（数据库的表值函数））返回 广元 的行政区内码，以便在只调出广元的相关数据。
 
+exp:http://localhost:37772/Admin/SystemUser/ListSubDivision?id=510801000000
+
+```
+[{"DivisionName":"旺苍县","DivisionNumber":510821000000,"DivisionCategoryText":null,"Opened":true,"state":"closed","Description":null}]
+```
+
+
+
+右边DataGrid控件 
+
+在
+
+```
+        function dataGrid1_onBeforeLoad(param) {
+            if (_divisionNumber) {
+                param.divisionNumber = _divisionNumber;
+                param.searchText = $('#tbSearchText').textbox('getValue');
+
+                if ($('#dataGrid1').datagrid('options').url == undefined) {
+                    $('#dataGrid1').datagrid('options').url = '@Url.Content("~/basedata/PartyOrganization/ListDivisionPartyOrganization")';
+                }
+            }
+        }
+```
+
+/basedata/PartyOrganization/ListDivisionPartyOrganization
+
+```
+public ActionResult ListDivisionPartyOrganization(PartyOrganizationParameter parameter)
+        {
+            try
+            {
+                if (parameter.divisionNumber.HasValue == false)
+                    throw new ApplicationException("对不起，你还没有选择行政区！");
+
+                if (HasDivisionPrivilege(parameter.divisionNumber.Value) == false)
+                    throw new ApplicationException("对不起，你没有区划代码为【{0}】的行政区操作权限！");
+
+                Tuple<int, IList<PartyOrganization>> result = this._partyOrganizationService.ListDivisionPartyOrganization(parameter, CurrentUser);
+
+                return this.Ajax(result.Item1, result.Item2);
+            }
+            catch (Exception ex)
+            {
+                logger.Error("ERROR", ex);
+                return this.AjaxException(this.ControllerContext, ex);
+            }
+        }
+```
+
+
+
+将PartyOrganizationParameter parameter 作为参数传递进来
+
 
 

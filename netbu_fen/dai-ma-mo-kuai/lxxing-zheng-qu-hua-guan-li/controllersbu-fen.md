@@ -55,7 +55,7 @@ public static class AjaxController
 ```
 
 传入参数   PartyOrganization result 是一个     /// 党组织档案数据实体类  
- 形式参数是 object data 
+ 形式参数是 object data
 
 ```
     public partial class PartyOrganization
@@ -84,25 +84,98 @@ public static class AjaxController
 
 返回值为 **public static AjaxResult ：ActionResult 其中 ActionResult 是 System.Web.Mvc 命名空间 中定义的**
 
-https://msdn.microsoft.com/zh-cn/library/system.web.mvc.actionresult\(v=vs.118\).aspx
+[https://msdn.microsoft.com/zh-cn/library/system.web.mvc.actionresult\(v=vs.118\).aspx](https://msdn.microsoft.com/zh-cn/library/system.web.mvc.actionresult%28v=vs.118%29.aspx)
 
 # ActionResult 类
 
 封装一个操作方法的结果并用于代表该操作方法执行框架级操作。
 
-##  public abstract class AjaxResult : ActionResult
+## public abstract class AjaxResult : ActionResult
 
 ```
 
 ```
 
-实现方法为： 
+实现方法为：
 
 ```
   public static AjaxResult Ajax(this Controller controller, object data)
 {
     return new AjaxDataResult(data);
 }
+```
+
+```
+
+
+public AjaxDataResult(object data)
+{
+    AjaxResponseModel model1 = new AjaxResponseModel {
+        total = 0,
+        rows = data
+    };
+    base.Data = model1;
+}
+
+AjaxDataResult 的实现： 
+
+```
+
+base.data  定义为： public AjaxResponseModel{get;set}
+
+
+
+```
+public AjaxResponseModel()
+{
+    this.scripts = string.Empty;
+    this._clientCode = 0;
+    this._internalHttpCode = 200;
+    this._httpStatusCode = 200;
+    this._message = "OK";
+    this._total = 0;
+    this._errors = new List<ValidateError>();
+}
+
+ 
+
+```
+
+```
+public class AjaxResponseModel
+{
+    // Fields
+    private int _clientCode;
+    private IList<ValidateError> _errors;
+    private int _httpStatusCode;
+    private int _internalHttpCode;
+    private string _message;
+    private int _total;
+    [CompilerGenerated, DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    private object <footer>k__BackingField;
+    [CompilerGenerated, DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    private object <rows>k__BackingField;
+    private string scripts;
+
+    // Methods
+    public AjaxResponseModel();
+    public void AddError(string filedName, string message);
+
+    // Properties
+    public int clientCode { get; set; }
+    public IList<ValidateError> errors { get; }
+    public object footer { get; set; }
+    public int httpStatusCode { get; set; }
+    public int internalHttpCode { get; set; }
+    public string message { get; set; }
+    public object rows { get; set; }
+    public string Scripts { get; set; }
+    public bool success { get; }
+    public int total { get; set; }
+}
+
+ 
+
 ```
 
 

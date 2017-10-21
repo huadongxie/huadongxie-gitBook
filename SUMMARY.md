@@ -44,6 +44,7 @@
       * [View模板引用](netbu_fen/dai-ma-mo-kuai/gong-gong-bu-fen/viewmo-ban-yin-yong.md)
     * [登录&权限管理](netbu_fen/dai-ma-mo-kuai/deng-5f5526-quan-xian-guan-li.md)
       * [Tuple](netbu_fen/dai-ma-mo-kuai/deng-5f5526-quan-xian-guan-li/tuple.md)
+      * [IList&lt;T&gt; Interface](netbu_fen/dai-ma-mo-kuai/deng-5f5526-quan-xian-guan-li/ilistt-interface.md)
   * [例子分析2 ](netbu_fen/li_zi_fen_xi_2.md)
 * [.微信部分](wei_xin_bu_fen/README.md)
   * [自定义微信菜单](wei_xin_bu_fen/zi_ding_yi_wei_xin_cai_dan.md)

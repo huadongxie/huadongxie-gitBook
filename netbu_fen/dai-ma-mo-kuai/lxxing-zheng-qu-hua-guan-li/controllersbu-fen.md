@@ -25,6 +25,10 @@ ListPartyOrganizationSocialUnit 方法 会返回 json 格式的数据。
         }
 ```
 
+
+
+
+
 ActionResult 是命名空间 namespace System.Web.Mvc 中定义的 类。
 
 封装一个操作方法的结果并用于代表该操作方法执行框架级操作。
@@ -106,8 +110,6 @@ public static class AjaxController
 ```
 
 ```
-
-
 public AjaxDataResult(object data)
 {
     AjaxResponseModel model1 = new AjaxResponseModel {
@@ -117,13 +119,10 @@ public AjaxDataResult(object data)
     base.Data = model1;
 }
 
-AjaxDataResult 的实现： 
-
+AjaxDataResult 的实现：
 ```
 
 base.data  定义为： public AjaxResponseModel{get;set}
-
-
 
 ```
 public AjaxResponseModel()
@@ -136,9 +135,6 @@ public AjaxResponseModel()
     this._total = 0;
     this._errors = new List<ValidateError>();
 }
-
- 
-
 ```
 
 ```
@@ -173,9 +169,6 @@ public class AjaxResponseModel
     public bool success { get; }
     public int total { get; set; }
 }
-
- 
-
 ```
 
 

@@ -180,6 +180,8 @@ exp:返回数据
 
 
 
+
+
 元组是一种数据结构，具有特定数量和元素序列。元组的一个示例是用于存储人员的姓名等标识符的第一个元素，第二个元素和人员收入中该年度第三个元素中的每一年中的数据结构具有三个元素 （称为 3 元组或三元组）。.NET Framework 直接支持具有 1 到 7 元素的元组。此外，您可以创建由嵌套中的元组对象的元组的八个或多个元素[Rest](https://msdn.microsoft.com/zh-cn/library/dd386918%28v=vs.110%29.aspx)属性[Tuple&lt;T1, T2, T3, T4, T5, T6, T7, TRest&gt;](https://msdn.microsoft.com/zh-cn/library/dd383325%28v=vs.110%29.aspx)对象。
 
 元组常用四种方法︰

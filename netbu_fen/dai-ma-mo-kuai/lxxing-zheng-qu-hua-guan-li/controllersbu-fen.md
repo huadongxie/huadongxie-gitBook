@@ -33,15 +33,11 @@ ActionResult 是命名空间 namespace System.Web.Mvc 中定义的 类。
 
 System.Web.Mvc命名空间包含一些类和接口，它们支持用于创建 Web 应用程序的 ASP.NET 模型视图控制器 \(MVC\) 框架。该命名空间包含表示控制器、控制器工厂、操作结果、视图、分部视图以及模型联编程序等的类。
 
-
-
 # Controller 类
 
 提供用于响应对 ASP.NET MVC 网站所进行的 HTTP 请求的方法。
 
-
-
-this.Ajax\(result\)  Ajax方法是  项目DLL（Tx.Web.MVC）中封装的一个方法
+**return this.Ajax\(result\)**  Ajax方法是  项目DLL（Tx.Web.MVC）中封装的一个方法
 
 ```
 public static class AjaxController
@@ -57,6 +53,37 @@ public static class AjaxController
     public static AjaxResult AjaxValidate(this Controller controller, ControllerContext context);
 }
 ```
+
+传入参数   PartyOrganization result 是一个     /// 党组织档案数据实体类 形式参数是 object data
+
+```
+    public partial class PartyOrganization
+    {
+        /// <summary>
+        /// 行政区划名称
+        /// </summary>
+        public string DivisionName { get; set; }
+
+        /// <summary>
+        /// 党组织类别名称
+        /// </summary>
+        public string PartyCategoryText { get; set; }
+
+        /// <summary>
+        /// 党组织所在单位情况
+        /// </summary>
+        public string PartyOrganSocialUnitText { get; set; }
+
+        /// <summary>
+        /// 社会单位
+        /// </summary>
+        public string PartyOrganizationSocialUnitText { get; set; }
+    }
+```
+
+
+
+
 
 
 

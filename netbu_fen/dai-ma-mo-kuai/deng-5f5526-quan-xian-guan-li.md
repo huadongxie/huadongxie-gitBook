@@ -31,3 +31,18 @@ CommandText = "SELECT  \*  FROM \[basedata\].\[f\_GetRecursiveDivision\]\(510000
 
 其中 510000000000 是当前 用户的权限掩码。通过 f\_GetRecursiveDivision（数据库的表值函数）返回admin的数据的行政区划内码
 
+```
+ string tableName = (id.HasValue) ? string.Format("[basedata].[f_GetSubAdministrativeDivision]({0})", id.Value) : string.Format("[basedata].[f_GetAdministrativeDivision]({0})", CurrentUser.DivisionNumber);
+
+                QueryParameter param = new QueryParameter()
+                {
+                    TableName = tableName
+                };
+
+                DataSet dataSet = this._dataService.GetData(param);
+```
+
+然后继续执行，如果id.HasValue有值（510801000000 广元的数据掩码），就调用f\_GetSubAdministrativeDivision（（数据库的表值函数））返回 广元 的行政区内码，以便在只调出广元的相关数据。
+
+
+

@@ -44,15 +44,13 @@ CommandText = "SELECT  \*  FROM \[basedata\].\[f\_GetRecursiveDivision\]\(510000
 
 然后继续执行，如果id.HasValue有值（510801000000 广元的数据掩码），就调用f\_GetSubAdministrativeDivision（（数据库的表值函数））返回 广元 的行政区内码，以便在只调出广元的相关数据。
 
-exp:http://localhost:37772/Admin/SystemUser/ListSubDivision?id=510801000000
+exp:[http://localhost:37772/Admin/SystemUser/ListSubDivision?id=510801000000](http://localhost:37772/Admin/SystemUser/ListSubDivision?id=510801000000)
 
 ```
 [{"DivisionName":"旺苍县","DivisionNumber":510821000000,"DivisionCategoryText":null,"Opened":true,"state":"closed","Description":null}]
 ```
 
-
-
-右边DataGrid控件 
+右边DataGrid控件
 
 在
 
@@ -94,9 +92,105 @@ public ActionResult ListDivisionPartyOrganization(PartyOrganizationParameter par
         }
 ```
 
-
-
 将PartyOrganizationParameter parameter 作为参数传递进来
+
+1、判断选择的行政区
+
+2、判读是否有此行政区的数据权限。
+
+3、查询数据库，得到数据 ,转化成josn格式，返回View
+
+测试地址
+
+```
+http://localhost:37772/basedata/PartyOrganization/ListDivisionPartyOrganization?page=1&rows=10&divisionNumber=510801000000
+```
+
+exp:返回数据
+
+```
+{
+  "Scripts": "",
+  "success": true,
+  "clientCode": 0,
+  "internalHttpCode": 200,
+  "httpStatusCode": 200,
+  "message": "OK",
+  "total": 2,
+  "errors": [],
+  "rows": [
+    {
+      "DivisionName": "东河镇",
+      "PartyCategoryText": "党总支部",
+      "PartyOrganSocialUnitText": "法人单位",
+      "PartyOrganizationSocialUnitText": null,
+      "PartyOrganizationId": 20,
+      "PartyCategoryId": 4,
+      "DivisionNumber": 510821100000,
+      "Name": "雅化集团旺苍化工有限公司总支委员会",
+      "Secretary": "李文乾",
+      "Contact": "雷伟",
+      "Telephone": "13547164768",
+      "PartyOrganSocialUnit": 2,
+      "CollectedBy": null,
+      "CollectedOn": null,
+      "SecretarySigned": false,
+      "SecretarySignedOn": null,
+      "CommitteeSealed": null,
+      "CommitteeSealedOn": null,
+      "Status": 0,
+      "VersionNumber": 8,
+      "CreatedBy": 51082110000000201,
+      "CreatedOn": "2017-09-28 14:30:23",
+      "ModifiedBy": 51000000000000001,
+      "ModifiedOn": "2017-10-21 14:18:42",
+      "Description": "asdf"
+    },
+    {
+      "DivisionName": "嘉川镇",
+      "PartyCategoryText": "党委",
+      "PartyOrganSocialUnitText": "法人单位",
+      "PartyOrganizationSocialUnitText": null,
+      "PartyOrganizationId": 21,
+      "PartyCategoryId": 3,
+      "DivisionNumber": 510821101000,
+      "Name": "旺苍县第六建筑工程公司党支部",
+      "Secretary": "张明玉",
+      "Contact": "张明玉",
+      "Telephone": "13518323720",
+      "PartyOrganSocialUnit": 2,
+      "CollectedBy": null,
+      "CollectedOn": null,
+      "SecretarySigned": false,
+      "SecretarySignedOn": null,
+      "CommitteeSealed": null,
+      "CommitteeSealedOn": null,
+      "Status": 0,
+      "VersionNumber": 6,
+      "CreatedBy": 51082110100000601,
+      "CreatedOn": "2017-09-28 21:05:22",
+      "ModifiedBy": 51000000000000001,
+      "ModifiedOn": "2017-10-21 14:27:50",
+      "Description": null
+    }
+  ],
+  "footer": null
+}
+```
+
+
+
+元组是一种数据结构，具有特定数量和元素序列。元组的一个示例是用于存储人员的姓名等标识符的第一个元素，第二个元素和人员收入中该年度第三个元素中的每一年中的数据结构具有三个元素 （称为 3 元组或三元组）。.NET Framework 直接支持具有 1 到 7 元素的元组。此外，您可以创建由嵌套中的元组对象的元组的八个或多个元素[Rest](https://msdn.microsoft.com/zh-cn/library/dd386918%28v=vs.110%29.aspx)属性[Tuple&lt;T1, T2, T3, T4, T5, T6, T7, TRest&gt;](https://msdn.microsoft.com/zh-cn/library/dd383325%28v=vs.110%29.aspx)对象。
+
+元组常用四种方法︰
+
+* 来表示一组数据。例如，一个元组可以表示的数据库记录，并且其组件可以表示每个字段的记录。
+
+* 若要提供轻松访问和数据集的操作。
+
+* 若要从方法返回多个值，而无需使用**out**参数 （在 C\# 中\) 或**ByRef**参数 （在 Visual Basic 中\)。
+
+* 若要将多个值传递给通过单个参数的方法。例如，[Thread.Start\(Object\)](https://msdn.microsoft.com/zh-cn/library/6x4c42hc%28v=vs.110%29.aspx)方法只有一个参数，允许你提供一个线程在启动时执行的方法的值。如果你提供[Tuple&lt;T1, T2, T3&gt;](https://msdn.microsoft.com/zh-cn/library/dd387150%28v=vs.110%29.aspx)对象作为方法自变量，则可以提供有三个项的数据的线程的启动例程。
 
 
 

@@ -54,7 +54,8 @@ public static class AjaxController
 }
 ```
 
-传入参数   PartyOrganization result 是一个     /// 党组织档案数据实体类 形式参数是 object data
+传入参数   PartyOrganization result 是一个     /// 党组织档案数据实体类  
+ 形式参数是 object data 
 
 ```
     public partial class PartyOrganization
@@ -81,9 +82,28 @@ public static class AjaxController
     }
 ```
 
+返回值为 **public static AjaxResult ：ActionResult 其中 ActionResult 是 System.Web.Mvc 命名空间 中定义的**
 
+https://msdn.microsoft.com/zh-cn/library/system.web.mvc.actionresult\(v=vs.118\).aspx
 
+# ActionResult 类
 
+封装一个操作方法的结果并用于代表该操作方法执行框架级操作。
+
+##  public abstract class AjaxResult : ActionResult
+
+```
+
+```
+
+实现方法为： 
+
+```
+  public static AjaxResult Ajax(this Controller controller, object data)
+{
+    return new AjaxDataResult(data);
+}
+```
 
 
 

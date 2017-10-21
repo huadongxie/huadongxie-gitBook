@@ -39,7 +39,7 @@ var studentInfo = Tuple.Create<string, int, uint>("Bob", 28, 175);
 Console.WriteLine($"Student Information: Name [{studentInfo.Item1}], Age [{studentInfo.Item2}], Height [{studentInfo.Item3}]");
 ```
 
-### 3.    从方法返回多个值
+### 3.    从方法返回多个值
 
 当一个函数需要返回多个值的时候，一般情况下可以使用out参数，这里可以用元组代替out实现返回多个值。
 
@@ -56,10 +56,27 @@ static void RunTest()
 }
 ```
 
-### 4.    用于单参数方法的多值传递
+### 4.    用于单参数方法的多值传递
 
+当函数参数仅是一个Object类型时，可以使用元组实现传递多个参数值。
 
+```
+static void WriteStudentInfo(Object student)
+{
+    var studentInfo = student as Tuple<string, int, uint>;
+    Console.WriteLine($"Student Information: Name [{studentInfo.Item1}], Age [{studentInfo.Item2}], Height [{studentInfo.Item3}]");
+}
 
-  
+static void RunTest()
+{
+    var t = new System.Threading.Thread(new System.Threading.ParameterizedThreadStart(WriteStudentInfo));
+    t.Start(new Tuple<string, int, uint>("Bob", 28, 175));
+    while (t.IsAlive)
+    {
+        System.Threading.Thread.Sleep(50);
+    }
+}
+```
+
 
 

@@ -29,5 +29,5 @@ exp: 以admin身份选中  广元市的时候，传入id 为 510801000000
 
 CommandText = "SELECT  \*  FROM \[basedata\].\[f\_GetRecursiveDivision\]\(510000000000\) "
 
-其中 510000000000 是当前 用户的权限掩码。
+其中 510000000000 是当前 用户的权限掩码。通过 f\_GetRecursiveDivision（数据库的表值函数）返回admin的数据的行政区划内码
 

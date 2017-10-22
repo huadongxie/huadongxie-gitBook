@@ -1,4 +1,4 @@
-# IList&lt;T&gt;方法
+# IList&lt;T&gt;接口
 
 **命名空间:**
 
@@ -6,5 +6,5 @@
 
 **程序集:**
 
- mscorlib（位于 mscorlib.dll）
+mscorlib（位于 mscorlib.dll）
 

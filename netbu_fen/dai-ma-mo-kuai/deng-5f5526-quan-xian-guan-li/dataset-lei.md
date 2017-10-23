@@ -121,7 +121,7 @@ id=sa;password=";
 
 （4）使用selectcommand字符串和一个连接字符串初始化SqlDataAdapter类的新实例。
 
-`1.     string conString = "data source=127.0.0.1;Database=test;user     
+`1.     string conString = "data source=127.0.0.1;Database=test;user       
 id=sa;password=";`
 
 `2.     string strSQL = "SELECT * FROM P_Product";`
@@ -140,17 +140,105 @@ id=sa;password=";`
 
 **2.    adapter.SelectCommand = new SqlCommand\(strSQL, myConnection\); **
 
-
-
 #### **4.2数据集的概念**
 
 形象的来说，数据集就是内存中一个**临时数据库**。怎么理解这个概念呢？如果数据库时水池，那么数据集就是你家中的水缸，如果数据库是超级市场，那么数据集就是你家的冰箱。如果你比较懒你可以把一星期的事物采购回家放在冰箱里，这样就避免了每次饿的时候往超市跑。如果你往超市跑，人多了就免不了要排队，即使超市人不多，你还得走一段路；走路也好说，如果路上再碰上突发事件---比如捡了一角钱之类的事情，势必耽误很长时间…..不管怎么说老往超市跑肯定会降低你“吃”的效率的。对于数据库访问也是一样，如果用户的每个请求都从服务器提取数据来满足，那情形跟上面一样，如果服务器请求过多那么你的请求需要排队，即使不排队，在请求时服务器突然发生故障等天灾人祸都会影响你程序的性能。
 
-    数据集都是作为数据库的临时数据容器，可以实现数据库的断开式访问。此时数据库是数据集的数据源，你可以一次性将需要的数据装进数据集，等操作完了再一并更新到数据库中，这就是数据集断开式访问方式。另外，数据集的数据源并不一定是数据库，数据集的数据源可以是文本、XML文件等，无论数据集包含的数据来自什么数据源，.Net都提供了一致的编程模型，这是数据集强大的地方。
-
-
+数据集都是作为数据库的临时数据容器，可以实现数据库的断开式访问。此时数据库是数据集的数据源，你可以一次性将需要的数据装进数据集，等操作完了再一并更新到数据库中，这就是数据集断开式访问方式。另外，数据集的数据源并不一定是数据库，数据集的数据源可以是文本、XML文件等，无论数据集包含的数据来自什么数据源，.Net都提供了一致的编程模型，这是数据集强大的地方。
 
     定义数据集及其数据表、数据列、数据行的类都在系统的System.Data命名空间下，之间的关系如下图：
+
+![](/assets/dateset-1.png)  
+
+
+  
+
+
+![](/assets/dataset-2.png)
+
+| **属   性** |
+| :--- |
+
+
+|  | **说  明** |
+| :--- | :--- |
+| Columns | 数据表中的列的集合，DataColumnCollection类型 |
+| Rows | 数据表中行的集合，DataRowCollection类型 |
+| DataSet | 获取此数据表所属的数据集 |
+| TableName | 获取或设置数据表的主键名称 |
+| PrimaryKey | 获取或设置数据表的主键 |
+| Constrains | 获取该数据表约束的集合，ContraintCollection类型 |
+| **方  法** | **说  明** |
+| AcceptChanges | 提交对该数据表进行的所有更改 |
+| Clear | 清除数据表所有数据 |
+| NewRow | 创建于该数据表具有相同架构的新行 |
+
+```
+
+```
+
+列的定义使用DataColumn类来完成，下面是这个类的重要属性和方法：
+
+属  性
+
+|  | 说  明 |
+| :--- | :--- |
+| AllowDBNull | 获取或设置一个值，该值指示数据表此列是否允许空值，默认为true |
+| AutoIncrement | 设置是否是标识列 |
+| AutoIncrementSeed | 标识列初值（也叫种子） |
+| AutoIncrementStep | 自动生成列值的递增量 |
+| ColumnName | 列名 |
+| DataType | 指定列的数据类型，数据类型可以为.Net Framework中的基数据类型，默认为string类型 |
+| DefaultValue | 设置或得到该列的默认值 |
+| ReadOnly | 设置该列是否为只读，true表示设置该列只读，默认为非只读 |
+| Table | 该列所属的DataTable |
+| Unique | 设置列的每一行中的值是否必须是唯一的，如果为true表示该列值不能重复，也就是唯一，默认是非唯一  |
+
+**4.3 数据集综合操作**
+
+每一个DataSet都是一个或多个DataTable 对象的集合（DataTable相当于数据库中的表），这些对象由数据行（DataRow）、数据列（DataColumn）、字段名（Column Name）、数据格（Item），以及约束（Constraint）和有关DataTable对象中数据的关系（Relations）与数据显示排序（DataView）信息组成。
+
+DataView用来在观察数据时提供排序和过滤的功能。DataColumn用来对表中的数据值进行一定的规限。比如哪一列数据的默认值是什么、哪一列数据值的范围是什么、哪个是主键、数据值是否是只读等。
+
+由于一个DataSet可能存在多张表，这些表可能存在关联关系，因此用parentRelations和childRelations来表述。ParentRelations表是父表，childRelations是子表，子表是对父表的引用，这样就使得一个表中的某行与另一个表中的某一行甚至整个表相关联。
+
+我们下面就从“增删改查”四方面来讨论这些集合的操作。
+
+ 增:
+
+关于向数据集里增加DataTable，最简单的就是调用Ilist接口的Add方法，如向数据集里加入名称为“Person”和“Books”两个数据表：
+
+ds.Tables.Add\(＂Person＂\);
+
+ds.Tables.Add\(＂Books＂\);
+
+l       删：
+
+从数据集里删除某个DataTable使用Ilist接口的Remove和RemoveAt方法：
+
+DataSet ds=new DataSet\(\);
+
+DataTabledtPerson=ds.Tables.Add\(＂Person＂\);
+
+ds.Tables.RemoveAt\(0\);      //从数据集里删除索引为0的表，也就是dtPerson
+
+ds.Tables.Remove\(dtPerson\);//从数据集里删除dtPerson
+
+l       改：
+
+数据集里的DataTable只能添加和删除，不能修改。
+
+l       查：
+
+获得数据集里的DataTable,可以使用索引器：
+
+DataSet ds=new DataSet\(\);
+
+ds.Tables.Add\(＂Person＂\);
+
+DataTable dt=ds.Tables\[0\];//按数字索引获得DataTable
+
+DataTable dt=ds.Tables\[＂Person＂\]; //按表名称获得DataTable
 
   
 

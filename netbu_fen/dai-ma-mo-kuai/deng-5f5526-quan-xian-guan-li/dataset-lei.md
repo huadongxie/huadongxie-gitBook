@@ -68,31 +68,27 @@ DataAdapter提供连接DataSet对象和数据源的桥梁。DataAdapter使用Com
 
 （1）初始化SqlDataAdapter类的新实例。
 
-`string conString = "data source=127.0.0.1;Database=test;user `
+`string conString = "data source=127.0.0.1;Database=test;user`
 
-`id=sa;password=123456";  `
+`id=sa;password=123456";`
 
-`SqlConnection myConnection = new SqlConnection(conString);  `
+`SqlConnection myConnection = new SqlConnection(conString);`
 
-`SqlCommand cmd = myConnection.CreateCommand();  `
+`SqlCommand cmd = myConnection.CreateCommand();`
 
-`cmd.CommandText = "SELECT * FROM P_Product";  `
+`cmd.CommandText = "SELECT * FROM P_Product";`
 
-`DataSet ds = new DataSet();  `
+`DataSet ds = new DataSet();`
 
-`6.     myConnection.Open();  `
+`6.     myConnection.Open();`
 
-`7.     SqlDataAdapter adapter = new SqlDataAdapter();  `
+`7.     SqlDataAdapter adapter = new SqlDataAdapter();`
 
-`8.     adapter.SelectCommand = cmd;  `
+`8.     adapter.SelectCommand = cmd;`
 
-`9.     adapter.Fill(ds, "ds");  `
+`9.     adapter.Fill(ds, "ds");`
 
-`10.  myConnection.Close(); `
-
-
-
-
+`10.  myConnection.Close();`
 
 （2）使用指定的SqlCommand 初始化 SqlDataAdapter 类的新实例。
 
@@ -121,31 +117,41 @@ id=sa;password=";
 6.     SqlDataAdapter adapter = new SqlDataAdapter(strSQL, myConnection); 
 7.     adapter.Fill(ds, "ds");  
 8.     myConnection.Close();
-
 ```
 
 （4）使用selectcommand字符串和一个连接字符串初始化SqlDataAdapter类的新实例。
 
-`1.     string conString = "data source=127.0.0.1;Database=test;user   
-id=sa;password=";  `
+`1.     string conString = "data source=127.0.0.1;Database=test;user     
+id=sa;password=";`
 
-`2.     string strSQL = "SELECT * FROM P_Product";             `
+`2.     string strSQL = "SELECT * FROM P_Product";`
 
-`3.     DataSet ds = new DataSet();             `
+`3.     DataSet ds = new DataSet();`
 
-`4.     SqlDataAdapter adapter = new SqlDataAdapter(strSQL, conString); `
+`4.     SqlDataAdapter adapter = new SqlDataAdapter(strSQL, conString);`
 
-`5.     adapter.Fill(ds, "ds");   
-`2．DataAdapter和SqlConnection、SqlCommand建立关联
+`5.     adapter.Fill(ds, "ds");`2．DataAdapter和SqlConnection、SqlCommand建立关联
 
 方式1：DataAdapter在构造参数时建立。
 
 方式2：通过SelectCommand属性建立。
 
-**1.    SqlDataAdapter adapter = new SqlDataAdapter\(\); **
+**1.    SqlDataAdapter adapter = new SqlDataAdapter\(\); **
 
-**2.    adapter.SelectCommand = new SqlCommand\(strSQL, myConnection\); **  
+**2.    adapter.SelectCommand = new SqlCommand\(strSQL, myConnection\); **
 
 
+
+#### **4.2数据集的概念**
+
+形象的来说，数据集就是内存中一个**临时数据库**。怎么理解这个概念呢？如果数据库时水池，那么数据集就是你家中的水缸，如果数据库是超级市场，那么数据集就是你家的冰箱。如果你比较懒你可以把一星期的事物采购回家放在冰箱里，这样就避免了每次饿的时候往超市跑。如果你往超市跑，人多了就免不了要排队，即使超市人不多，你还得走一段路；走路也好说，如果路上再碰上突发事件---比如捡了一角钱之类的事情，势必耽误很长时间…..不管怎么说老往超市跑肯定会降低你“吃”的效率的。对于数据库访问也是一样，如果用户的每个请求都从服务器提取数据来满足，那情形跟上面一样，如果服务器请求过多那么你的请求需要排队，即使不排队，在请求时服务器突然发生故障等天灾人祸都会影响你程序的性能。
+
+    数据集都是作为数据库的临时数据容器，可以实现数据库的断开式访问。此时数据库是数据集的数据源，你可以一次性将需要的数据装进数据集，等操作完了再一并更新到数据库中，这就是数据集断开式访问方式。另外，数据集的数据源并不一定是数据库，数据集的数据源可以是文本、XML文件等，无论数据集包含的数据来自什么数据源，.Net都提供了一致的编程模型，这是数据集强大的地方。
+
+
+
+    定义数据集及其数据表、数据列、数据行的类都在系统的System.Data命名空间下，之间的关系如下图：
+
+  
 
 

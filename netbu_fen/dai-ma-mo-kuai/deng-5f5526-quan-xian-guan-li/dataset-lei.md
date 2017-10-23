@@ -121,7 +121,7 @@ id=sa;password=";
 
 （4）使用selectcommand字符串和一个连接字符串初始化SqlDataAdapter类的新实例。
 
-`1.     string conString = "data source=127.0.0.1;Database=test;user       
+`1.     string conString = "data source=127.0.0.1;Database=test;user         
 id=sa;password=";`
 
 `2.     string strSQL = "SELECT * FROM P_Product";`
@@ -146,21 +146,19 @@ id=sa;password=";`
 
 数据集都是作为数据库的临时数据容器，可以实现数据库的断开式访问。此时数据库是数据集的数据源，你可以一次性将需要的数据装进数据集，等操作完了再一并更新到数据库中，这就是数据集断开式访问方式。另外，数据集的数据源并不一定是数据库，数据集的数据源可以是文本、XML文件等，无论数据集包含的数据来自什么数据源，.Net都提供了一致的编程模型，这是数据集强大的地方。
 
-    定义数据集及其数据表、数据列、数据行的类都在系统的System.Data命名空间下，之间的关系如下图：
+```
+定义数据集及其数据表、数据列、数据行的类都在系统的System.Data命名空间下，之间的关系如下图：
+```
 
-![](/assets/dateset-1.png)  
-
-
-  
-
+![](/assets/dateset-1.png)
 
 ![](/assets/dataset-2.png)
 
-| **属   性** |
+| **属   性** |
 | :--- |
 
 
-|  | **说  明** |
+|  | **说  明** |
 | :--- | :--- |
 | Columns | 数据表中的列的集合，DataColumnCollection类型 |
 | Rows | 数据表中行的集合，DataRowCollection类型 |
@@ -168,7 +166,7 @@ id=sa;password=";`
 | TableName | 获取或设置数据表的主键名称 |
 | PrimaryKey | 获取或设置数据表的主键 |
 | Constrains | 获取该数据表约束的集合，ContraintCollection类型 |
-| **方  法** | **说  明** |
+| **方  法** | **说  明** |
 | AcceptChanges | 提交对该数据表进行的所有更改 |
 | Clear | 清除数据表所有数据 |
 | NewRow | 创建于该数据表具有相同架构的新行 |
@@ -179,9 +177,9 @@ id=sa;password=";`
 
 列的定义使用DataColumn类来完成，下面是这个类的重要属性和方法：
 
-属  性
+属  性
 
-|  | 说  明 |
+|  | 说  明 |
 | :--- | :--- |
 | AllowDBNull | 获取或设置一个值，该值指示数据表此列是否允许空值，默认为true |
 | AutoIncrement | 设置是否是标识列 |
@@ -192,7 +190,7 @@ id=sa;password=";`
 | DefaultValue | 设置或得到该列的默认值 |
 | ReadOnly | 设置该列是否为只读，true表示设置该列只读，默认为非只读 |
 | Table | 该列所属的DataTable |
-| Unique | 设置列的每一行中的值是否必须是唯一的，如果为true表示该列值不能重复，也就是唯一，默认是非唯一  |
+| Unique | 设置列的每一行中的值是否必须是唯一的，如果为true表示该列值不能重复，也就是唯一，默认是非唯一 |
 
 **4.3 数据集综合操作**
 
@@ -204,7 +202,7 @@ DataView用来在观察数据时提供排序和过滤的功能。DataColumn用�
 
 我们下面就从“增删改查”四方面来讨论这些集合的操作。
 
- 增:
+增:
 
 关于向数据集里增加DataTable，最简单的就是调用Ilist接口的Add方法，如向数据集里加入名称为“Person”和“Books”两个数据表：
 
@@ -212,7 +210,7 @@ ds.Tables.Add\(＂Person＂\);
 
 ds.Tables.Add\(＂Books＂\);
 
-l       删：
+l       删：
 
 从数据集里删除某个DataTable使用Ilist接口的Remove和RemoveAt方法：
 
@@ -220,15 +218,15 @@ DataSet ds=new DataSet\(\);
 
 DataTabledtPerson=ds.Tables.Add\(＂Person＂\);
 
-ds.Tables.RemoveAt\(0\);      //从数据集里删除索引为0的表，也就是dtPerson
+ds.Tables.RemoveAt\(0\);      //从数据集里删除索引为0的表，也就是dtPerson
 
 ds.Tables.Remove\(dtPerson\);//从数据集里删除dtPerson
 
-l       改：
+l       改：
 
 数据集里的DataTable只能添加和删除，不能修改。
 
-l       查：
+l       查：
 
 获得数据集里的DataTable,可以使用索引器：
 
@@ -240,6 +238,130 @@ DataTable dt=ds.Tables\[0\];//按数字索引获得DataTable
 
 DataTable dt=ds.Tables\[＂Person＂\]; //按表名称获得DataTable
 
-  
+**4.3.2 DataTable的Columns集合**
 
+增：
+
+向数据表添加列我们在前面也提到了，添加的方式也是使用Ilist接口的Add（）。以下是最常用的添加列的方式：
+
+dtPerson.Columns.Add\(＂psnNo＂,typeof\(string\)\);
+
+删：
+
+删除数据表中的列也是使用Ilist接口的Remove或RemoveAt方法：
+
+    dtPerson.Columns.RemoveAt\(0\);  //按索引删除列，这里是删除第一列
+
+    dtPerson.Columns.Remove\(＂psnNo＂\); //按列的名称删除列
+
+改：
+
+修改DataTable里面的某一列可以通过索引器先获得，然后再修改：
+
+DataColumnc=dtPerson.Columns\[＂psnName＂\];
+
+c.AllowDBNull=false;
+
+查：
+
+从DataTable里面获得某一列也是使用索引器的方式：
+
+DataColumnc=dtPerson.Columns\[＂psnName＂\]; //按列名获得该列对象
+
+DataColumnc=dtPerson.Columns\[0\];  //按列索引获得该列对象，这里是获得第一列  
+**4.3.3 DataTable的Rows集合：**
+
+增：
+
+向DataTable里面增加数据行使用Add\(\)方法，有两种方式。一种方式，加入行之前要先使用DataTable的NewRow方法获得一个空行：
+
+DataRowr=dtPerson.NewRow\(\);
+
+dtPerson.Rows.Add\(r\);
+
+第二种方式，你可以根据表的列结构构造一个对象数组，这种方式要注意你构造的数组要与表的列结构对应：
+
+object\[\]r=new object\[\]{＂001＂，＂帕瓦罗蒂＂，＂男＂，22，＂中国郑州＂}
+
+删:
+
+删除某个数据行，可以使用Ilist接口的Remove和RemoveAt两种方法，还可以使用该行的delete方法，使用RemoveAt或delete方法删除行比较常用：
+
+DataRowr=dtPerson.NewRow\(\);
+
+dtPerson.Rows.Add\(r\);
+
+r.Delete\(\);  //删除r行
+
+dtPerson.Rows.Remove\(r\);  //删除r行
+
+dtPerson.Rows.RemoveAt\(0\);  //按行索引删除行，这里是删除第一行
+
+改:
+
+因为数据集的实际数据就保存在行里，所以修改行数据是数据集里面最常用的一个操作，修改行也是先使用表的索引器先获得行，然后再使用行的索引器进行修改：
+
+DataRow  r=dtPerson.Rows\[0\];
+
+r\[＂psnSex＂\]= ＂女＂; //按列名修改该行的值
+
+r\[0\]=＂＂;     //按列索引修改行，这里是修改该行的第一列数据
+
+查:
+
+获得某个表的某一行使用表的索引器，获得行的某一列值使用行的索引器，使用方式我们在介绍修改行的时候已经介绍过了，你可以通过数据集直接使用索引获得某行某列的值，要注意返回的值是object类型的，要想获得具体的值还需要进行类型转换：
+
+获取Person表第二行psnName列的数据：
+
+string name=ds.Tables\[＂Person＂\].Rows\[1\].Columns\[＂psnName＂\].ToString\(\);
+
+获取Person表第二行列索引为4的列数据，注意索引都从0开始：
+
+stringaddress=ds.Tables\[＂Person＂\].Rows\[1\].Columns\[4\].ToString\(\);
+
+获取数据集中第一个表，第二行第五列的数据：
+
+stringsex=ds.Tables\[0\].Rows\[1\].Columns\[4\].ToString\(\);
+
+当然，也可以通过循环遍历表中所有行的数据：
+
+foreach\(DataRowr in dtPerson.Rows\)
+
+{
+
+    foreach\(DataColumn c in dtPerson.Columns\)
+
+       Console.WriteLine\(＂{0}＂,r\[c.ColumnName\]\);
+
+}  
+
+
+**4.4 DataView 类**
+
+（1）得到DataView。
+
+DataView dv = ds.Tables\[0\].DefaultView; 
+
+//或  
+
+DataView dv = new DataView\(ds.Tables\["Product"\], "ID &gt; 52", "ID DESC", 
+
+DataViewRowState.CurrentRows\); 
+
+（2）得到DataView的行数据。
+
+foreach \(DataRowView rowview in dv\) 
+
+{ 
+
+    for \(int i = 0; i &lt; dv.Table.Columns.Count; i++\) 
+
+    { 
+
+        Response.Write\(rowview\[i\] + "  
+"\);  
+
+    }     
+
+} 
 

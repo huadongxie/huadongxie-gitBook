@@ -178,10 +178,6 @@ exp:返回数据
 }
 ```
 
-
-
-
-
 元组是一种数据结构，具有特定数量和元素序列。元组的一个示例是用于存储人员的姓名等标识符的第一个元素，第二个元素和人员收入中该年度第三个元素中的每一年中的数据结构具有三个元素 （称为 3 元组或三元组）。.NET Framework 直接支持具有 1 到 7 元素的元组。此外，您可以创建由嵌套中的元组对象的元组的八个或多个元素[Rest](https://msdn.microsoft.com/zh-cn/library/dd386918%28v=vs.110%29.aspx)属性[Tuple&lt;T1, T2, T3, T4, T5, T6, T7, TRest&gt;](https://msdn.microsoft.com/zh-cn/library/dd383325%28v=vs.110%29.aspx)对象。
 
 元组常用四种方法︰
@@ -193,6 +189,85 @@ exp:返回数据
 * 若要从方法返回多个值，而无需使用**out**参数 （在 C\# 中\) 或**ByRef**参数 （在 Visual Basic 中\)。
 
 * 若要将多个值传递给通过单个参数的方法。例如，[Thread.Start\(Object\)](https://msdn.microsoft.com/zh-cn/library/6x4c42hc%28v=vs.110%29.aspx)方法只有一个参数，允许你提供一个线程在启动时执行的方法的值。如果你提供[Tuple&lt;T1, T2, T3&gt;](https://msdn.microsoft.com/zh-cn/library/dd387150%28v=vs.110%29.aspx)对象作为方法自变量，则可以提供有三个项的数据的线程的启动例程。
+
+```
+Tuple<int, IList<PartyOrganization>> result = this._partyOrganizationService.ListDivisionPartyOrganization(parameter, CurrentUser);
+```
+
+ListDivisionPartyOrganization\(parameter, CurrentUser\); 
+
+在PartyOrganizationservice.cs中实现。
+
+```
+ SqlMultiTablePageParameter param = new SqlMultiTablePageParameter(parameter.page, parameter.rows, OrderExpression.Asc("po.PartyOrganizationId"));
+```
+
+SqlMultiTablePageParameter 定义在TX.Query 中 Tx.Core.dll
+
+```
+namespace Tx.Query
+{
+    public class SqlMultiTablePageParameter : MultiTableParameter
+    {
+        public SqlMultiTablePageParameter(int pageIndex, int pageSize);
+        public SqlMultiTablePageParameter(int pageIndex, int pageSize, OrderExpression orderExpression);
+
+        public int PageIndex { get; set; }
+        public int PageSize { get; set; }
+        public int StartRow { get; }
+        public override string CommandText { get; }
+    }
+}
+```
+
+MultiTableParameter  定义在Tx.Query中
+
+```
+ public abstract class MultiTableParameter : AbstractParameter
+    {
+        protected MultiTableParameter();
+
+        public IList<IExpression> FromExpressions { get; }
+        public override string FromCommandText { get; }
+
+        public MultiTableParameter AddFromExpr(FromExpression exp);
+        public MultiTableParameter AddFromExpr(LogicExpression exp);
+        public MultiTableParameter AddFromExpr(SimpleExpression exp);
+        public MultiTableParameter AddFromExpr(CompareExpression exp);
+        public MultiTableParameter AddFromExpr(SegmentExpression exp);
+    }
+```
+
+AbstractParameter 定义在 Tx.Query中
+
+```
+  public abstract class AbstractParameter
+    {
+        protected AbstractParameter();
+
+        public string OrderByCommandText { get; }
+        public IList<IExpression> OrderExpressions { get; }
+        public string WhereCommandText { get; }
+        public IList<IExpression> HavingExpressions { get; }
+        public IList<IExpression> GroupExpressions { get; }
+        public IList<IExpression> WhereExpressions { get; }
+        public string SelectCommandText { get; }
+        public IList<IExpression> SelectExpressions { get; }
+        public virtual string FromCommandText { get; }
+        public virtual string CommandText { get; }
+
+        public AbstractParameter AddGroupExpr(GroupExpression exp);
+        public AbstractParameter AddHavingExpr(SimpleExpression exp);
+        public AbstractParameter AddHavingExpr(LogicExpression exp);
+        public AbstractParameter AddOrderExpr(OrderExpression exp);
+        public AbstractParameter AddSelectExpr(SelectExpression exp);
+        public AbstractParameter AddSelectExprs(params SelectExpression[] exps);
+        public AbstractParameter AddWhereExpr(SegmentExpression exp);
+        public AbstractParameter AddWhereExpr(SimpleExpression exp);
+        public AbstractParameter AddWhereExpr(LogicExpression exp);
+        public void AssignAdvancedQueryParam(IList<FieldParam> paramList);
+    }
+```
 
 
 

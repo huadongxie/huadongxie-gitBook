@@ -230,12 +230,7 @@ public SqlMultiTablePageParameter(int pageIndex, int pageSize, OrderExpression o
         base.OrderExpressions.Add(orderExpression);
     }
 }
-
- 
-
 ```
-
-
 
 MultiTableParameter  定义在Tx.Query中
 
@@ -285,6 +280,94 @@ AbstractParameter 定义在 Tx.Query中
         public void AssignAdvancedQueryParam(IList<FieldParam> paramList);
     }
 ```
+
+            DataSet dataSet = this.GetPageData\(param\); 定义在 Tx.Data.SqlClient 
+
+```
+public DataSet GetData(QueryParameter param)
+{
+    if (param == null)
+    {
+        throw new ArgumentNullException("param 不允许为空！");
+    }
+    if (string.IsNullOrEmpty(param.TableName))
+    {
+        throw new ArgumentNullException("param.TableName 不允许为空！");
+    }
+    return SqlHelper.GetData(param);
+}
+
+ 
+
+```
+
+SqlHelper.GetData\(param\); 定义在 Tx.Data.SqlClient 
+
+```
+public static DataSet GetData(QueryParameter param)
+{
+    if (param == null)
+    {
+        throw new ArgumentNullException("param 不允许为空！");
+    }
+    if (string.IsNullOrEmpty(param.TableName))
+    {
+        throw new ArgumentNullException("param.TableName 不允许为空！");
+    }
+    string commandText = param.CommandText;
+    Database database = new DatabaseProviderFactory().CreateDefault();
+    DbCommand sqlStringCommand = database.GetSqlStringCommand(commandText);
+    if (param > null)
+    {
+        foreach (IExpression expression in param.WhereExpressions)
+        {
+            if (expression is SimpleExpression)
+            {
+                SimpleExpression expression2 = expression as SimpleExpression;
+                database.AddInParameter(sqlStringCommand, expression2.ExpName, expression2.DbType, expression2.Value);
+            }
+        }
+    }
+    return database.ExecuteDataSet(sqlStringCommand);
+}
+
+ 
+
+ 
+  public static DataSet GetData(QueryParameter param)
+{
+    if (param == null)
+    {
+        throw new ArgumentNullException("param 不允许为空！");
+    }
+    if (string.IsNullOrEmpty(param.TableName))
+    {
+        throw new ArgumentNullException("param.TableName 不允许为空！");
+    }
+    string commandText = param.CommandText;
+    Database database = new DatabaseProviderFactory().CreateDefault();
+    DbCommand sqlStringCommand = database.GetSqlStringCommand(commandText);
+    if (param > null)
+    {
+        foreach (IExpression expression in param.WhereExpressions)
+        {
+            if (expression is SimpleExpression)
+            {
+                SimpleExpression expression2 = expression as SimpleExpression;
+                database.AddInParameter(sqlStringCommand, expression2.ExpName, expression2.DbType, expression2.Value);
+            }
+        }
+    }
+    return database.ExecuteDataSet(sqlStringCommand);
+}
+
+ 
+
+```
+
+Database database = new DatabaseProviderFactory\(\).CreateDefault\(\);   定义在 Microsoft.Practices.EnterpriseLibrary.Data.dll中
+
+http://blog.csdn.net/zoohouse/article/details/6533784
 
 
 

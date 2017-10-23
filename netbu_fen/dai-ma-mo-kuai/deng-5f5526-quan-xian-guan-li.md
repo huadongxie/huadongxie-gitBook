@@ -194,7 +194,7 @@ exp:返回数据
 Tuple<int, IList<PartyOrganization>> result = this._partyOrganizationService.ListDivisionPartyOrganization(parameter, CurrentUser);
 ```
 
-ListDivisionPartyOrganization\(parameter, CurrentUser\); 
+ListDivisionPartyOrganization\(parameter, CurrentUser\);
 
 在PartyOrganizationservice.cs中实现。
 
@@ -219,6 +219,23 @@ namespace Tx.Query
     }
 }
 ```
+
+其中 SqlMultiTablePageParameter构造函数实现如下\(Tx.Core.dll\)
+
+```
+public SqlMultiTablePageParameter(int pageIndex, int pageSize, OrderExpression orderExpression) : this(pageIndex, pageSize)
+{
+    if (orderExpression > null)
+    {
+        base.OrderExpressions.Add(orderExpression);
+    }
+}
+
+ 
+
+```
+
+
 
 MultiTableParameter  定义在Tx.Query中
 

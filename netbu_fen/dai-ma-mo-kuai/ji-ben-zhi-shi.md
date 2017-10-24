@@ -33,6 +33,26 @@ public class AnyClass
         Old( );
     }
 }
+```
+
+仔细看下该实例，在该实例中我们用到了”Obsolete”attribute，它标记了一个不该再被使用的语言元素（译者注：这里的元素为方法），该属性的第一个参数是string类型，它解释为什么该元素被荒弃，以及我们该使用什么元素来代替它。实际中，我们可以书写任何其它文本来代替这段文本。第二个参数是告诉编译器把依然使用这被标识的元素视为一种错误，这就意味着编译器会因此而产生一个警告。
+
+当我们试图编译上面的上面的程序，我们会得到如下错误：
+
+AnyClass.Old\(\)' is obsolete: 'Don't use Old method,  use New method'
+
+**开发自定义Attributes**  
+现在我们即将了解怎么开发自定义的attributes。这儿有个小小处方，有它我们就可以学会创建自定义的attributes。
+
+在C\#中，我们的attribute类都派生于System.Attribute类\(A class that derives from the abstract class System.Attribute, whether directly or indirectly, is an attribute class. The declaration of an attribute class defines a new kind of attribute that can be placed on a declaration\) ，我们就这么行动吧。
+
+```
+public class HelpAttribute : Attribute
+
+{
+
+}
+
 
 ```
 

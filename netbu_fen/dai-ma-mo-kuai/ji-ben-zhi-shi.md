@@ -16,3 +16,25 @@ Assemblies:
 
 System.Runtime.dll, mscorlib.dll, netstandard.dll
 
+**使用预定义Attributes**
+
+```
+public class AnyClass 
+
+{
+    [Obsolete("Don't use Old method, use New method", true)]
+
+    static void Old( ) { }
+
+    static void New( ) { }
+
+    public static void Main( ) 
+    {
+        Old( );
+    }
+}
+
+```
+
+
+

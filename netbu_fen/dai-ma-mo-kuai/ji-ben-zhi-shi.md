@@ -4,9 +4,9 @@ Attributes是一种新的描述信息，我们既可以使用attributes来定义
 
 **定义**
 
-MSDN 中做如下定义\(ms-help://MS.MSDNQTR.2002APR.1033/csspec/html/vclrfcsharpspec\_17\_2.htm\)
+[MSDN 中做如下定义\(ms-help://MS.MSDNQTR.2002APR.1033/csspec/html/vclrfcsharpspec\_17\_2.htm\)](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?f1url=https%3A%2F%2Fmsdn.microsoft.com%2Fquery%2Fdev15.query%3FappId%3DDev15IDEF1%26l%3DZH-CN%26k%3Dk%28System.Attribute%29;k%28SolutionItemsProject%29;k%28TargetFrameworkMoniker-.NETFramework,Version%3Dv4.6.2%29;k%28DevLang-csharp%29%26rd%3Dtrue&view=netframework-4.7.1)
 
-_"An attribute is a piece of additional declarative information that is specified for a declaration." _
+_"An attribute is a piece of additional declarative information that is specified for a declaration." _
 
 Namespace:
 

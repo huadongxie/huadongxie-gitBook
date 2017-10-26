@@ -1,8 +1,12 @@
 ### CorporationEdit.cshtml
 
+
+
 ```
 <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-save" onclick="save()">保存</a>
 ```
+
+保存按钮调用save\(）方法
 
 ```
  function save() {

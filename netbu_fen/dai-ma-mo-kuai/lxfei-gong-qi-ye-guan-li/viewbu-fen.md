@@ -1,7 +1,5 @@
 ### CorporationEdit.cshtml
 
-
-
 ```
 <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-save" onclick="save()">保存</a>
 ```
@@ -48,6 +46,8 @@ submit\(\) 方法触发 submit 事件，或规定当发生 submit 事件时运�
 
 ```
 $(selector).submit(function)
+
+
 ```
 
 

@@ -83,5 +83,17 @@ IF NOT EXISTS 判断 是否 有 编号为 @UserNumber的用户 如无 则返回�
 
 BEGIN TRANSACTION 开始事务。
 
+定义区划编码变量DivisionNumber ，查询出 原用户的 区划编码并赋值。 
 
+定义新区划编码变量NewDivisionNumber ，查询出 新用户的 区划编码并赋值。
+
+更新社会单位主表 DivisionNumber、CreateBy、ModifiedBy字段。
+
+更新党组织DivisionNumber、CreatedBy、ModifiedBy
+
+更新党委表CreatedBy
+
+提交事务，成功。
+
+ 
 

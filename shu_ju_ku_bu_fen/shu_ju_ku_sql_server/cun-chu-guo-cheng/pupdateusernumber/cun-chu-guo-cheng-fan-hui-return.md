@@ -1,14 +1,14 @@
 存储过程有三种返回:
 
-1.   用return返回数字型数据
+1. 用return返回数字型数据
 
-2.   用返回参数返回结果,可以返回各种数据类型\(通过游标来循环查询结果每一行\)
+2. 用返回参数返回结果,可以返回各种数据类型\(通过游标来循环查询结果每一行\)
 
-3.   直接在存储过程中用select返回结果集,可以是任意的select语句,这意味着是任意的返回结果集.
+3. 直接在存储过程中用select返回结果集,可以是任意的select语句,这意味着是任意的返回结果集.
 
-方法一:用return返回数字型数据 
+方法一:用return返回数字型数据
 
-1. 创建存储过程
+1、创建存储过程
 
 ```
 --SQLSERVER 2005示例数据库
@@ -28,7 +28,7 @@ ELSE
 GO
 ```
 
-2. 在存储过程中调用
+2、在存储过程中调用
 
 ```
 DECLARE @return_status INT;
@@ -37,7 +37,7 @@ SELECT 'Return Status' = @return_status;
 GO
 ```
 
-3. 在VS中调用
+3、在VS中调用
 
 ```
  List<DbParameter> para = new List<DbParameter>();

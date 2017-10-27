@@ -30,5 +30,44 @@ GO
 
 ##### 
 
+```
+ALTER PROCEDURE [dbo].[p_UpdateUserNumber] 
+	@UserNumber bigint,
+	@NewUserNumber bigint
+AS
+BEGIN
+
+	SET XACT_ABORT ON;
+
+	IF NOT EXISTS(SELECT 1 FROM [Admin].[SystemUser] WHERE UserNumber = @UserNumber) RETURN 1;
+	IF NOT EXISTS(SELECT 1 FROM [Admin].[SystemUser] WHERE UserNumber = @NewUserNumber) RETURN 2;
+
+	BEGIN TRANSACTION;
+
+   DECLARE @DivisionNumber bigint, @NewDivisionNumber bigint;
+
+   SELECT @DivisionNumber = DivisionNumber FROM [Admin].[SystemUser] WHERE UserNumber = @UserNumber;
+   SELECT @NewDivisionNumber = DivisionNumber FROM [Admin].[SystemUser] WHERE UserNumber = @NewUserNumber;
+
+   	 -- 更新社会单位档案区划代码
+	 UPDATE [basedata].[SocialUnitBase] 
+	   SET DivisionNumber = @NewDivisionNumber, CreatedBy = @NewUserNumber, ModifiedBy = @NewUserNumber
+     WHERE CreatedBy = @UserNumber;
+
+	 -- 更新党组织档案区划代码
+	 UPDATE [basedata].[PartyOrganization]
+	   SET DivisionNumber = @NewDivisionNumber, CreatedBy = @NewUserNumber, ModifiedBy = @NewUserNumber
+     WHERE CreatedBy = @UserNumber;
+
+	-- 更新党员档案
+	 UPDATE [basedata].[PartyMember]
+	    SET CreatedBy = @NewUserNumber, ModifiedBy = @NewUserNumber
+	  WHERE CreatedBy = @UserNumber
+	  		   	
+	COMMIT TRANSACTION;
+	 
+END
+```
+
 
 

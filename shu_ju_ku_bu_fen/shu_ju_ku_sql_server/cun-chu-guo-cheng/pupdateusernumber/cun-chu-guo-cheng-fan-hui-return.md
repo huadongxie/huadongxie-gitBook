@@ -51,5 +51,28 @@ GO
         Response.Write(para[1].Value.ToString());
 ```
 
+方法二:用返回参数返回结果,可以返回各种数据类型\(通过游标来循环查询结果每一行\)   
+
+1. 创建存储过程
+
+```
+--SQLSERVER 2005示例数据库
+USE AdventureWorks
+GO
+CREATE PROCEDURE OutPutValue 
+@param VARCHAR(11),
+@param2 VARCHAR(11) OUTPUT
+AS
+IF (
+       SELECT StateProvince
+       FROM   Person.vAdditionalContactInfo
+       WHERE  ContactID = @param
+   ) = 'WA'
+   SET @param2='Good'
+ELSE
+   SET @param2='Bad'
+GO
+```
+
 
 

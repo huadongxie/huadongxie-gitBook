@@ -23,6 +23,7 @@
         * [S ET QUOTED\_IDENTIFIER ON](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/pupdateusernumber/s-et-quotedidentifier-on.md)
         * [GO](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/pupdateusernumber/go.md)
       * [新建存储过程](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/xin-jian-cun-chu-guo-cheng.md)
+      * [修改存储过程](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/xiu-gai-cun-chu-guo-cheng.md)
 * [.net部分](netbu_fen/README.md)
   * [程序结构](netbu_fen/cheng_xu_jie_gou.md)
   * [MVC编程模式](netbu_fen/mvcbian_cheng_mo_shi.md)

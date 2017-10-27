@@ -77,7 +77,5 @@ BEGIN
 
 END
 
-中间包含的是
-
-
+中间包含的是 Transact-SQL 语句块。
 

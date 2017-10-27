@@ -79,3 +79,9 @@ END
 
 中间包含的是 Transact-SQL 语句块。
 
+IF NOT EXISTS 判断 是否 有 编号为 @UserNumber的用户 如无 则返回。
+
+BEGIN TRANSACTION 开始事务。
+
+
+

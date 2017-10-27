@@ -19,6 +19,7 @@
   * [数据库sql Server ](shu_ju_ku_bu_fen/shu_ju_ku_sql_server.md)
     * [存储过程](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng.md)
       * [p\_UpdateUserNumber](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/pupdateusernumber.md)
+        * [SET ANSI\_NULLS ON](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/pupdateusernumber/set-ansinulls-on.md)
 * [.net部分](netbu_fen/README.md)
   * [程序结构](netbu_fen/cheng_xu_jie_gou.md)
   * [MVC编程模式](netbu_fen/mvcbian_cheng_mo_shi.md)

@@ -20,3 +20,5 @@ public int DistributeSocialUnitAccounts(long divisionNumber, int socialUnitType,
 
 1、调用存储过程  p\_GetNextCorporationNumber ，加入参数 DivisionNumber（区划编码），StepValue（步长），NextNumber（下一个编码）
 
+exp:用户admin登录操作 admin编号位 51000000000000001，admin区划编号位 510000000000
+

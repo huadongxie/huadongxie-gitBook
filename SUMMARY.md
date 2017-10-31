@@ -49,7 +49,7 @@
         * [toolbar](netbu_fen/dai-ma-mo-kuai/lxxing-zheng-qu-hua-guan-li/viewbu-fen/toolbar.md)
         * [TreeGrid\(easyUI\)](netbu_fen/dai-ma-mo-kuai/lxxing-zheng-qu-hua-guan-li/viewbu-fen/treegrideasyui.md)
       * [Controllers部分](netbu_fen/dai-ma-mo-kuai/lxxing-zheng-qu-hua-guan-li/controllersbu-fen.md)
-    * lx用户登陆
+    * [lx用户登陆](netbu_fen/dai-ma-mo-kuai/lxyong-hu-deng-lu.md)
     * [公共部分](netbu_fen/dai-ma-mo-kuai/gong-gong-bu-fen.md)
       * [View模板引用](netbu_fen/dai-ma-mo-kuai/gong-gong-bu-fen/viewmo-ban-yin-yong.md)
     * [登录&权限管理](netbu_fen/dai-ma-mo-kuai/deng-5f5526-quan-xian-guan-li.md)
@@ -62,6 +62,8 @@
         * [下拉框获取数据](netbu_fen/dai-ma-mo-kuai/lxfei-gong-qi-ye-guan-li/viewbu-fen/xia-la-kuang-huo-qu-shu-ju.md)
     * [基本知识](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi.md)
       * [方法前面的\[\] Attributes](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi/fang-fa-qian-mian-76845b5d-attributes.md)
+    * [用户管理](netbu_fen/dai-ma-mo-kuai/yong-hu-guan-li.md)
+      * 分配非公账号
   * [例子分析2 ](netbu_fen/li_zi_fen_xi_2.md)
 * [.微信部分](wei_xin_bu_fen/README.md)
   * [自定义微信菜单](wei_xin_bu_fen/zi_ding_yi_wei_xin_cai_dan.md)

@@ -65,11 +65,9 @@ DatabaseProviderFactory factory = new DatabaseProviderFactory();
             DbCommand command = db.GetSqlStringCommand(sql);
 ```
 
-           return db.ExecuteNonQuery\(command\);
+```
+       return db.ExecuteNonQuery\(command\);
+```
 
-执行SQL语句，提交数据执行。
-
-
-
-
+执行SQL语句，提交数据执行。注意 主键 SystemUserId  是用序列自动生成的。
 

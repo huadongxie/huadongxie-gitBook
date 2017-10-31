@@ -22,3 +22,5 @@ public int DistributeSocialUnitAccounts(long divisionNumber, int socialUnitType,
 
 exp:用户admin登录操作 admin编号位 51000000000000001，admin区划编号位 510000000000
 
+返回值计算出来 为  510000000000021
+

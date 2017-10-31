@@ -26,19 +26,27 @@ exp:用户admin登录操作 admin编号位 51000000000000001，admin区划编号
 
 3、根据出传入的accountCount 数量 进行循环。
 
-    3.1  新建一个 SystemUser 对象 ，并对属性赋值。UserNumber = \(firstSocialUnitNumber + index\) \* 100 + 1
+```
+3.1  新建一个 SystemUser 对象 ，并对属性赋值。UserNumber = \(firstSocialUnitNumber + index\) \* 100 + 1
 
-                                                                                     UserNumber = 51000000000002101
+                                                                                 UserNumber = 51000000000002101
 
-                        PrivilegeMask1 = \(firstSocialUnitNumber + index\) \* 100,   PrivilegeMask1 = 51000000000002100
+                    PrivilegeMask1 = \(firstSocialUnitNumber + index\) \* 100,
+```
 
-                  PrivilegeMask2 = \(firstSocialUnitNumber + index\) \* 100 + 99, PrivilegeMask2 = 51000000000002199
+PrivilegeMask1 = 51000000000002100
 
+```
+              PrivilegeMask2 = \(firstSocialUnitNumber + index\) \* 100 + 99,
+```
 
+PrivilegeMask2 = 51000000000002199
 
-   3.2调用\Tx.Party.DataAccess\Admin\SystemUserDAO.cs中的CreateDefaultUser
+3.2调用\Tx.Party.DataAccess\Admin\SystemUserDAO.cs中的CreateDefaultUser
 
-         3.2.1根据传入的参数 SystemUser\(一个对象）
+```
+     3.2.1根据传入的参数 SystemUser\(一个对象）
+```
 
 ```
 string sql = @"MERGE [Admin].[SystemUser] AS t
@@ -50,8 +58,6 @@ string sql = @"MERGE [Admin].[SystemUser] AS t
                                 INSERT(DivisionNumber, SocialUnitType, UserNumber, UserName, LoginName, Password, PrivilegeMask1, PrivilegeMask2, Opened, CreatedBy, CreatedOn) 
                                 VALUES(s.DivisionNumber, s.SocialUnitType, s.UserNumber, s.UserName, s.LoginName, s.Password, s.PrivilegeMask1, s.PrivilegeMask2, 1, s.CreatedBy, GETDATE());";
 ```
-
-
 
 
 

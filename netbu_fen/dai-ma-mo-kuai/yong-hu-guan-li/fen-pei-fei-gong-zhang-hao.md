@@ -13,8 +13,10 @@ public int DistributeSocialUnitAccounts(long divisionNumber, int socialUnitType,
 \Tx.Party.DataAccess\BaseDAO.cs
 
 ```
-
+        public long GetNextCorporationNumber(long divisionNumber, long stepValue = 1)
 ```
 
+获取指定行政区划编码的下一个有效非公企业编码
 
+1、调用存储过程  p\_GetNextCorporationNumber ，加入参数 DivisionNumber（区划编码），StepValue（步长），NextNumber（下一个编码）
 

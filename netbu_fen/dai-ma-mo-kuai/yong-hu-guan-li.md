@@ -31,5 +31,10 @@ public ActionResult DistributeSocialUnitAccounts(int socialUnitType, int count)
 
 \Tx.Party.Services\Admin\ISystemUserService.cs 的 DistributeSocialUnitAccounts
 
+```
+public int DistributeSocialUnitAccounts(long divisionNumber, int socialUnitType, long accountCount, long createdBy)
+
+```
+
 
 

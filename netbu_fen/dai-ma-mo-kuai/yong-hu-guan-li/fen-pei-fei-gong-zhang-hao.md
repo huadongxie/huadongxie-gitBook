@@ -69,5 +69,5 @@ DatabaseProviderFactory factory = new DatabaseProviderFactory();
        return db.ExecuteNonQuery\(command\);
 ```
 
-执行SQL语句，提交数据执行。注意 主键 SystemUserId  是用序列自动生成的。
+执行SQL语句，提交数据执行。注意 主键 SystemUserId  是用序列自动生成的。\(NEXT VALUE FOR \[Admin\].\[SeqSystemUserId\]\)
 

@@ -33,7 +33,6 @@ public ActionResult DistributeSocialUnitAccounts(int socialUnitType, int count)
 
 ```
 public int DistributeSocialUnitAccounts(long divisionNumber, int socialUnitType, long accountCount, long createdBy)
-
 ```
 
 

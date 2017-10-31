@@ -62,8 +62,9 @@
         * [下拉框获取数据](netbu_fen/dai-ma-mo-kuai/lxfei-gong-qi-ye-guan-li/viewbu-fen/xia-la-kuang-huo-qu-shu-ju.md)
     * [基本知识](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi.md)
       * [方法前面的\[\] Attributes](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi/fang-fa-qian-mian-76845b5d-attributes.md)
+      * [C\#中回滚TransactionScope的使用方法和原理](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi/czhong-hui-gun-transactionscope-de-shi-yong-fang-fa-he-yuan-li.md)
     * [用户管理](netbu_fen/dai-ma-mo-kuai/yong-hu-guan-li.md)
-      * 分配非公账号
+      * [分配非公账号](netbu_fen/dai-ma-mo-kuai/yong-hu-guan-li/fen-pei-fei-gong-zhang-hao.md)
   * [例子分析2 ](netbu_fen/li_zi_fen_xi_2.md)
 * [.微信部分](wei_xin_bu_fen/README.md)
   * [自定义微信菜单](wei_xin_bu_fen/zi_ding_yi_wei_xin_cai_dan.md)

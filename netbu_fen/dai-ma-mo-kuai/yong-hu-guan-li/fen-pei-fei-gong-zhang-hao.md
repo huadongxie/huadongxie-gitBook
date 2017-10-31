@@ -10,7 +10,7 @@ public int DistributeSocialUnitAccounts(long divisionNumber, int socialUnitType,
 
 2、调用方法
 
-\Tx.Party.DataAccess\BaseDAO.cs
+\Tx.Party.DataAccess\BaseDAO.cs GetNextCorporationNumber
 
 ```
         public long GetNextCorporationNumber(long divisionNumber, long stepValue = 1)
@@ -58,6 +58,18 @@ string sql = @"MERGE [Admin].[SystemUser] AS t
                                 INSERT(DivisionNumber, SocialUnitType, UserNumber, UserName, LoginName, Password, PrivilegeMask1, PrivilegeMask2, Opened, CreatedBy, CreatedOn) 
                                 VALUES(s.DivisionNumber, s.SocialUnitType, s.UserNumber, s.UserName, s.LoginName, s.Password, s.PrivilegeMask1, s.PrivilegeMask2, 1, s.CreatedBy, GETDATE());";
 ```
+
+```
+DatabaseProviderFactory factory = new DatabaseProviderFactory();
+            Database db = factory.CreateDefault();
+            DbCommand command = db.GetSqlStringCommand(sql);
+```
+
+           return db.ExecuteNonQuery\(command\);
+
+执行SQL语句，提交数据执行。
+
+
 
 
 

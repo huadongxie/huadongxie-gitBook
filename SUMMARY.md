@@ -27,6 +27,7 @@
         * [存储过程返回 return](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/pupdateusernumber/cun-chu-guo-cheng-fan-hui-return.md)
       * [新建存储过程](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/xin-jian-cun-chu-guo-cheng.md)
       * [修改存储过程](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/cun-chu-guo-cheng/xiu-gai-cun-chu-guo-cheng.md)
+    * [MERGE](shu_ju_ku_bu_fen/shu_ju_ku_sql_server/merge.md)
 * [.net部分](netbu_fen/README.md)
   * [程序结构](netbu_fen/cheng_xu_jie_gou.md)
   * [MVC编程模式](netbu_fen/mvcbian_cheng_mo_shi.md)

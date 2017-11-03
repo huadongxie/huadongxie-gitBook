@@ -188,8 +188,17 @@ document.getElementById\('maindiv'\).getElementsByTagName\("p"\);
 
 var x=document.getElementsByTagName\("p"\);现在，变量 x 包含着页面中所有 &lt;p&gt; 元素的一个列表，并且我们可以通过它们的索引号来访问这些 &lt;p&gt; 元素。
 
-注释：索引号从 0 开始。  
+注释：索引号从 0 开始。
+
+您可以通过使用 length 属性来循环遍历节点列表：
+
+var x=document.getElementsByTagName\("p"\); for \(var i=0;i&lt;x.length;i++\) { // do something with each paragraph }您也可以通过索引号来访问某个具体的元素。
+
+要访问第三个 &lt;p&gt; 元素，您可以这么写：var y=x\[2\];
 
 
+
+  
+  
 
 

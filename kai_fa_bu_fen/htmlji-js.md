@@ -221,6 +221,13 @@ parentNode、firstChild以及lastChild
 var x=\[a paragraph\]; var text=x.firstChild.nodeValue;parentNode 属性常被用来改变文档的结构。假设您希望从文档中删除带有 id 为 "maindiv" 的节点：  
 var x=document.getElementById\("maindiv"\); x.parentNode.removeChild\(x\);首先，您需要找到带有指定 id 的节点，然后移至其父节点并执行 removeChild\(\) 方法。
 
+## 优点和缺点
+
+DOM的优势主要表现在：易用性强，使用DOM时，将把所有的XML文档信息都存于内存中，并且遍历简单，支持XPath，增强了易用性。
+
+DOM的缺点主要表现在：效率低，解析速度慢，内存占用量过高，对于大文件来说几乎不可能使用。另外效率低还表现在大量的消耗时间，因为使用DOM进行解析时，将为文档的每个element、attribute、processing-instruction和comment都创建一个对象，这样在DOM机制中所运用的大量对象的创建和销毁无疑会影响其效率。
+
+  
   
 
 

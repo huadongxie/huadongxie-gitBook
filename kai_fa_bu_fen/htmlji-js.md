@@ -180,7 +180,15 @@ document.getElementsByTagName\("p"\);
 
 下面这个例子会返回所有 &lt;p&gt; 元素的一个节点列表，且这些 &lt;p&gt; 元素必须是 id 为 "maindiv" 的元素的后代：
 
-document.getElementById\('maindiv'\).getElementsByTagName\("p"\);  
+document.getElementById\('maindiv'\).getElementsByTagName\("p"\);
+
+### 节点列表
+
+当我们使用节点列表时，通常要把此列表保存在一个变量中，就像这样：
+
+var x=document.getElementsByTagName\("p"\);现在，变量 x 包含着页面中所有 &lt;p&gt; 元素的一个列表，并且我们可以通过它们的索引号来访问这些 &lt;p&gt; 元素。
+
+注释：索引号从 0 开始。  
 
 
 

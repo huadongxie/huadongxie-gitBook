@@ -214,6 +214,13 @@ parentNode、firstChild以及lastChild
 
 在上面的HTML代码中，第一个 &lt;td&gt; 是 &lt;tr&gt; 元素的首个子元素（firstChild），而最后一个 &lt;td&gt; 是 &lt;tr&gt;元素的最后一个子元素（lastChild）。
 
-此外，&lt;tr&gt; 是每个 &lt;td&gt;元 素的父节点（parentNode）。  
+此外，&lt;tr&gt; 是每个 &lt;td&gt;元 素的父节点（parentNode）。
+
+对 firstChild 最普遍的用法是访问某个元素的文本：
+
+var x=\[a paragraph\]; var text=x.firstChild.nodeValue;parentNode 属性常被用来改变文档的结构。假设您希望从文档中删除带有 id 为 "maindiv" 的节点：  
+var x=document.getElementById\("maindiv"\); x.parentNode.removeChild\(x\);首先，您需要找到带有指定 id 的节点，然后移至其父节点并执行 removeChild\(\) 方法。
+
+  
 
 

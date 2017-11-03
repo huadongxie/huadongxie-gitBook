@@ -61,7 +61,7 @@ HTML DOM 定义了所有 HTML 元素的**对象和属性**，以及访问它们�
 
 根据[W3C](https://baike.baidu.com/item/W3C)DOM规范，DOM是[HTML](https://baike.baidu.com/item/HTML)与[XML](https://baike.baidu.com/item/XML)的应用编程接口（API），DOM将整个页面映射为一个由层次节点组成的文件。有1级、2级、3级共3个级别。
 
-###  1级DOM
+### 1级DOM
 
 1级DOM在1998年10月份成为W3C的提议，由DOM核心与DOM HTML两个模块组成。DOM核心能映射以XML为基础的文档结构，允许获取和操作文档的任意部分。DOM HTML通过添加HTML专用的对象与函数对DOM核心进行了扩展。
 
@@ -79,6 +79,46 @@ DOM样式：描述处理基于CSS样式的接口；
 
 DOM遍历与范围：描述遍历和操作文档树的接口；
 
+### 3级DOM
+
+3级DOM通过引入统一方式载入和保存文档和文档验证方法对DOM进行进一步扩展，DOM3包含一个名为“DOM载入与保存”的新模块，DOM核心扩展后可支持XML1.0的所有内容，包括XML Infoset、 XPath、和XML Base。
+
+### "0级"DOM
+
+当阅读与DOM有关的材料时，可能会遇到参考0级DOM的情况。需要注意的是并没有标准被称为0级DOM，它仅是DOM历史上一个参考点（0级DOM被认为是在Internet Explorer 4.0 与Netscape Navigator4.0支持的最早的DHTML）。
+
+### 节点
+
+根据 DOM，HTML 文档中的每个成分都是一个节点。
+
+DOM 是这样规定的：
+
+整个文档是一个文档节点
+
+每个 HTML 标签是一个元素节点
+
+包含在 HTML 元素中的文本是文本节点
+
+每一个 HTML 属性是一个属性节点
+
+注释属于注释节点  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+  
   
 
 

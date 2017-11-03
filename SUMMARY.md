@@ -13,7 +13,8 @@
   * [Pthon](kai_fa_bu_fen/pthon.md)
   * [django](kai_fa_bu_fen/django.md)
   * [HTML及JS](kai_fa_bu_fen/htmlji-js.md)
-    * DOM\(Document Object Model\) 文档对象模型
+    * [DOM\(Document Object Model\) 文档对象模型](kai_fa_bu_fen/htmlji-js/domdocument-object-model-wen-dang-dui-xiang-mo-xing.md)
+      * [HTML DOM Document 对象](kai_fa_bu_fen/htmlji-js/domdocument-object-model-wen-dang-dui-xiang-mo-xing/html-dom-document-dui-xiang.md)
 * [数据库部分](shu_ju_ku_bu_fen/README.md)
   * [数据库mysql](shu_ju_ku_bu_fen/shu_ju_ku_mysql.md)
   * [powerDesigner](shu_ju_ku_bu_fen/powerdesigner.md)

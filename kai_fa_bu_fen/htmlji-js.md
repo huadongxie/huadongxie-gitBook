@@ -196,9 +196,8 @@ var x=document.getElementsByTagName\("p"\); for \(var i=0;i&lt;x.length;i++\) { 
 
 要访问第三个 &lt;p&gt; 元素，您可以这么写：var y=x\[2\];
 
+parentNode、firstChild以及lastChild
 
-
-  
   
 
 

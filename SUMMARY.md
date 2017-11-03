@@ -25,6 +25,7 @@
       * [History 对象](kai_fa_bu_fen/htmlji-js/browser-dui-xiang/history-dui-xiang.md)
       * [Location 对象](kai_fa_bu_fen/htmlji-js/browser-dui-xiang/location-dui-xiang.md)
     * [HTML 对象](kai_fa_bu_fen/htmlji-js/html-dui-xiang.md)
+    * [JavaScript 对象](kai_fa_bu_fen/htmlji-js/javascript-dui-xiang.md)
 * [数据库部分](shu_ju_ku_bu_fen/README.md)
   * [数据库mysql](shu_ju_ku_bu_fen/shu_ju_ku_mysql.md)
   * [powerDesigner](shu_ju_ku_bu_fen/powerdesigner.md)

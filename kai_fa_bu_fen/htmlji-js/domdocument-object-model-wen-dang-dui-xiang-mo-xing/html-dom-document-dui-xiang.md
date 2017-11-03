@@ -8,10 +8,7 @@ Document 对象使我们可以从脚本中对 HTML 页面中的所有元素进�
 
 ## Document 对象集合
 
-  
-集合
-
-|  | 描述 |
+| 集合 | 描述 |
 | :--- | :--- |
 | [all\[\]](http://www.w3school.com.cn/jsref/coll_doc_all.asp) | 提供对文档中所有 HTML 元素的访问。 |
 | [anchors\[\]](http://www.w3school.com.cn/jsref/coll_doc_anchors.asp) | 返回对文档中所有 Anchor 对象的引用。 |

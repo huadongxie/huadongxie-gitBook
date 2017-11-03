@@ -101,24 +101,44 @@ DOM 是这样规定的：
 
 每一个 HTML 属性是一个属性节点
 
-注释属于注释节点  
+注释属于注释节点
 
+### Node 层次
 
+节点彼此都有等级关系。
 
+HTML 文档中的所有节点组成了一个文档树（或节点树）。HTML 文档中的每个元素、属性、文本等都代表着树中的一个节点。树起始于文档节点，并由此继续伸出枝条，直到处于这棵树最低级别的所有文本节点为止。
 
-
-
+下面这个图片表示一个文档树（节点树）：  
   
-  
+![](/assets/https:/baike.baidu.com/pic/DOM/50288/0/810a19d8bc3eb13599df8648a61ea8d3fd1f442c?fr=lemma&ct=single#aid=0&pic=810a19d8bc3eb13599df8648a61ea8d3fd1f442c.png)  
 
 
+### 文档树
 
+```
+请看下面这个HTML文档：
+<html>
+<head>
+<title>DOM Tutorial</title>
+</head>
+<body>
+<h1>DOM Lesson one</h1>
+<p>Hello world!</p>
+</body>
+</html>
 
+```
 
+上面所有的节点彼此间都存在关系。
 
+除文档节点之外的每个节点都有父节点。举例，&lt;head&gt; 和 &lt;body&gt; 的父节点是 &lt;html&gt; 节点，文本节点 "Hello world!" 的父节点是 &lt;p&gt; 节点。
 
+大部分元素节点都有子节点。比方说，&lt;head&gt; 节点有一个子节点：&lt;title&gt; 节点。&lt;title&gt; 节点也有一个子节点：文本节点 "DOM Tutorial"。
 
-  
-  
+当节点分享同一个父节点时，它们就是辈（同级节点）。比方说，&lt;h1&gt; 和 &lt;p&gt;是同辈，因为它们的父节点均是 &lt;body&gt; 节点。
 
+节点也可以拥有后代，后代指某个节点的所有子节点，或者这些子节点的子节点，以此类推。比方说，所有的文本节点都是 &lt;html&gt;节点的后代，而第一个文本节点是 &lt;head&gt; 节点的后代。
+
+节点也可以拥有先辈。先辈是某个节点的父节点，或者父节点的父节点，以此类推。比方说，所有的文本节点都可把 &lt;html&gt; 节点作为先辈节点。
 

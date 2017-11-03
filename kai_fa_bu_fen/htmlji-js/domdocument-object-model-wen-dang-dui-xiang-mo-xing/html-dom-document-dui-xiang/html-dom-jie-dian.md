@@ -18,3 +18,7 @@ NodeList 对象表示节点列表，比如 HTML 元素的子节点集合。
 
 元素也可以拥有属性。属性是属性节点（参见下一节）。
 
+## [属性和方法](http://www.w3school.com.cn/jsref/dom_obj_all.asp)
+
+下面的属性和方法可用于所有 HTML 元素上：
+

@@ -39,7 +39,18 @@ Document 对象使我们可以从脚本中对 HTML 页面中的所有元素进�
 | [getElementsByTagName\(\)](http://www.w3school.com.cn/jsref/met_doc_getelementsbytagname.asp) | 返回带有指定标签名的对象集合。 |
 | [open\(\)](http://www.w3school.com.cn/jsref/met_doc_open.asp) | 打开一个流，以收集来自任何 document.write\(\) 或 document.writeln\(\) 方法的输出。 |
 | [write\(\)](http://www.w3school.com.cn/jsref/met_doc_write.asp) | 向文档写 HTML 表达式 或 JavaScript 代码。 |
-| [writeln\(\)](http://www.w3school.com.cn/jsref/met_doc_writeln.asp) | 等同于 write\(\) 方法，不同的是在每个表达式之后写一个换行符。  |
+| [writeln\(\)](http://www.w3school.com.cn/jsref/met_doc_writeln.asp) | 等同于 write\(\) 方法，不同的是在每个表达式之后写一个换行符。 |
 
+## Document 对象描述
 
+  
+HTMLDocument 接口对 DOM Document 接口进行了扩展，定义 HTML 专用的属性和方法。
+
+很多属性和方法都是 HTMLCollection 对象（实际上是可以用数组或名称索引的只读数组），其中保存了对锚、表单、链接以及其他可脚本元素的引用。
+
+这些集合属性都源自于 0 级 DOM。它们已经被[Document.getElementsByTagName\(\)](http://www.w3school.com.cn/jsref/met_doc_getelementsbytagname.asp)所取代，但是仍然常常使用，因为他们很方便。
+
+[write\(\) 方法](http://www.w3school.com.cn/jsref/met_doc_write.asp)值得注意，在文档载入和解析的时候，它允许一个脚本向文档中插入动态生成的内容。
+
+注意，在 1 级 DOM 中，HTMLDocument 定义了一个名为[getElementById\(\)](http://www.w3school.com.cn/jsref/met_doc_getelementbyid.asp)的非常有用的方法。在 2 级 DOM 中，该方法已经被转移到了 Document 接口，它现在由 HTMLDocument 继承而不是由它定义了。
 

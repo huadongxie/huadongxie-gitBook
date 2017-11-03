@@ -57,5 +57,28 @@ HTML DOM 定义了所有 HTML 元素的**对象和属性**，以及访问它们�
 
 换言之，**HTML DOM 是关于如何获取、修改、添加或删除 HTML 元素的标准。**
 
+## DOM的分级
+
+根据[W3C](https://baike.baidu.com/item/W3C)DOM规范，DOM是[HTML](https://baike.baidu.com/item/HTML)与[XML](https://baike.baidu.com/item/XML)的应用编程接口（API），DOM将整个页面映射为一个由层次节点组成的文件。有1级、2级、3级共3个级别。
+
+###  1级DOM
+
+1级DOM在1998年10月份成为W3C的提议，由DOM核心与DOM HTML两个模块组成。DOM核心能映射以XML为基础的文档结构，允许获取和操作文档的任意部分。DOM HTML通过添加HTML专用的对象与函数对DOM核心进行了扩展。
+
+### 2级DOM
+
+鉴于1级DOM仅以映射文档结构为目标，DOM 2级面向更为宽广。通过对原有DOM的扩展，2级DOM通过对象接口增加了对鼠标和用户界面事件（DHTML长期支持鼠标与用户界面事件）、范围、遍历（重复执行DOM文档）和层叠样式表（CSS）的支持。同时也对DOM 1的核心进行了扩展，从而可支持XML命名空间。
+
+2级DOM引进了几个新DOM模块来处理新的接口类型：
+
+DOM视图：描述跟踪一个文档的各种视图（使用CSS样式设计文档前后）的接口；
+
+DOM事件：描述事件接口；
+
+DOM样式：描述处理基于CSS样式的接口；
+
+DOM遍历与范围：描述遍历和操作文档树的接口；
+
+  
 
 

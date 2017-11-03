@@ -198,6 +198,23 @@ var x=document.getElementsByTagName\("p"\); for \(var i=0;i&lt;x.length;i++\) { 
 
 parentNode、firstChild以及lastChild
 
+这三个属性 parentNode、firstChild 以及 lastChild 可遵循文档的结构，在文档中进行“短距离的旅行”。
+
+请看下面这个 HTML 片段：
+
+```
+<table>
+<tr>
+<td>John</td>
+<td>Doe</td>
+<td>Alaska</td>
+</tr>
+</table>
+
+```
+
+在上面的HTML代码中，第一个 &lt;td&gt; 是 &lt;tr&gt; 元素的首个子元素（firstChild），而最后一个 &lt;td&gt; 是 &lt;tr&gt;元素的最后一个子元素（lastChild）。
+
   
 
 

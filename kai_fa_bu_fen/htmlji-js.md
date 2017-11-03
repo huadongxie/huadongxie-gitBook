@@ -210,11 +210,10 @@ parentNode、firstChild以及lastChild
 <td>Alaska</td>
 </tr>
 </table>
-
 ```
 
 在上面的HTML代码中，第一个 &lt;td&gt; 是 &lt;tr&gt; 元素的首个子元素（firstChild），而最后一个 &lt;td&gt; 是 &lt;tr&gt;元素的最后一个子元素（lastChild）。
 
-  
+此外，&lt;tr&gt; 是每个 &lt;td&gt;元 素的父节点（parentNode）。  
 
 

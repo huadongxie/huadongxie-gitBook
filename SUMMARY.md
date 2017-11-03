@@ -20,6 +20,7 @@
         * [HTML DOM Event 对象](kai_fa_bu_fen/htmlji-js/domdocument-object-model-wen-dang-dui-xiang-mo-xing/html-dom-document-dui-xiang/html-dom-event-dui-xiang.md)
     * [Browser 对象](kai_fa_bu_fen/htmlji-js/browser-dui-xiang.md)
       * Window 对象
+      * Navigator 对象
 * [数据库部分](shu_ju_ku_bu_fen/README.md)
   * [数据库mysql](shu_ju_ku_bu_fen/shu_ju_ku_mysql.md)
   * [powerDesigner](shu_ju_ku_bu_fen/powerdesigner.md)

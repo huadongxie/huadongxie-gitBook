@@ -39,11 +39,11 @@
 
 1.6 删除事件remove\\_member
 
-1.7 加载成功事件
+1.7 加载成功事件dataGrid1\_onLoadSuccess
 
+1.8    //加载失败事件dataGrid1\_onLoadError
 
-
-dataGrid1\_onLoadSuccess
+1.9
 
 1. table部分
 2. toolbar1部分

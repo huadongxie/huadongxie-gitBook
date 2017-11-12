@@ -84,6 +84,7 @@
       * [View](netbu_fen/dai-ma-mo-kuai/lxdang-yuan-guan-li/view.md)
         * [DivisionPartyMember](netbu_fen/dai-ma-mo-kuai/lxdang-yuan-guan-li/view/divisionpartymember.md)
         * [PartyMember](netbu_fen/dai-ma-mo-kuai/lxdang-yuan-guan-li/view/partymember.md)
+        * [\_ partymember.cshtml](netbu_fen/dai-ma-mo-kuai/lxdang-yuan-guan-li/view/partymember-cshtml.md)
   * [例子分析2 ](netbu_fen/li_zi_fen_xi_2.md)
 * [.微信部分](wei_xin_bu_fen/README.md)
   * [自定义微信菜单](wei_xin_bu_fen/zi_ding_yi_wei_xin_cai_dan.md)

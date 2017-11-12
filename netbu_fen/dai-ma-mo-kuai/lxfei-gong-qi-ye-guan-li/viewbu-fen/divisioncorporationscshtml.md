@@ -12,3 +12,13 @@
 
 1.2右边数据表部分
 
+```
+<div data-options="region:'center',title:'非公企业列表'">
+
+        @Html.Partial("_Corporation", Model)
+
+</div>
+```
+
+
+

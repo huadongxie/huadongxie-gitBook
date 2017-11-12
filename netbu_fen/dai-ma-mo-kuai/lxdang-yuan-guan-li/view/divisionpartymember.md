@@ -16,3 +16,13 @@
 
 3.2 右边数据表部分
 
+```
+    <div data-options="region:'center', title:'党员列表'">
+
+        @Html.Partial("_PartyMember")
+
+    </div>
+```
+
+
+

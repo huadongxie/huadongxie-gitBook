@@ -1,8 +1,8 @@
 \_partymember.cshtml
 
-1. JS部分
+1、JS部分
 
-   1.1    //键盘事件function keydown\(\)
+1.1    //键盘事件function keydown\(\)
 
 ```
    function keydown() {
@@ -41,12 +41,12 @@
 
 1.7 加载成功事件dataGrid1\_onLoadSuccess
 
-1.8    //加载失败事件dataGrid1\_onLoadError
+1.8    //加载失败事件  
+dataGrid1\_onLoadError
 
-1.9
+2、table部
 
-1. table部分
-2. toolbar1部分
+3、toolbar1部分
 
 
 

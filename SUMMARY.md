@@ -76,6 +76,8 @@
       * [View部分](netbu_fen/dai-ma-mo-kuai/lxfei-gong-qi-ye-guan-li/viewbu-fen.md)
         * [下拉框获取数据](netbu_fen/dai-ma-mo-kuai/lxfei-gong-qi-ye-guan-li/viewbu-fen/xia-la-kuang-huo-qu-shu-ju.md)
         * [DivisionCorporations.cshtml](netbu_fen/dai-ma-mo-kuai/lxfei-gong-qi-ye-guan-li/viewbu-fen/divisioncorporationscshtml.md)
+        * [C orporationEdit.cshtml exit: Ctrl + ↩](netbu_fen/dai-ma-mo-kuai/lxfei-gong-qi-ye-guan-li/viewbu-fen/c-orporationeditcshtml-exit-ctrl-+.md)
+        * [CorporationEdit.cshtml](netbu_fen/dai-ma-mo-kuai/lxfei-gong-qi-ye-guan-li/viewbu-fen/corporationeditcshtml.md)
     * [基本知识](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi.md)
       * [方法前面的\[\] Attributes](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi/fang-fa-qian-mian-76845b5d-attributes.md)
       * [C\#中回滚TransactionScope的使用方法和原理](netbu_fen/dai-ma-mo-kuai/ji-ben-zhi-shi/czhong-hui-gun-transactionscope-de-shi-yong-fang-fa-he-yuan-li.md)

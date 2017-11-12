@@ -46,8 +46,6 @@ submit\(\) 方法触发 submit 事件，或规定当发生 submit 事件时运�
 
 ```
 $(selector).submit(function)
-
-
 ```
 
 
